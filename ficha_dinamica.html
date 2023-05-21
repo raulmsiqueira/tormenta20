@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ficha Dinâmica</title>
+    <title>Ficha de Tormenta20, Dinâmica e Autopreenchível</title>
 </head>
+
 <body>
     <div>
         <h1>TORMENTA20 - Ficha de Personagem</h1>
@@ -13,10 +15,11 @@
     <div>
         <form>
             <fieldset>
+                <legend>Cabeçalho da Ficha</legend>
                 <div>
                     <label for="personagem">Personagem</label>
                     <input type="text" name="personagem" id="personagem">
-                    
+
                     <label for="jogador">Jogador</label>
                     <input type="text" name="jogador" id="jogador">
                 </div>
@@ -24,15 +27,16 @@
                 <div>
                     <label for="raca">Raça</label>
                     <input type="text" name="raca" id="raca">
-                    
+
                     <label for="origem">Origem</label>
                     <input type="text" name="origem" id="origem">
-                    
+
                     <label for="classeP">Classe</label>
                     <input type="text" name="classeP" id="classeP">
-                    
+
                     <label for="nivel">Nível</label>
-                    <select name="nivel" id="nivel"> <!-- <input> ou <select> ? -->
+                    <!-- <input> ou <select> ? -->
+                    <select name="nivel" id="nivel">
                         <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -52,91 +56,96 @@
                         <option value="17">17</option>
                         <option value="18">18</option>
                         <option value="19">19</option>
-                        <option value="20">20</option>                       
+                        <option value="20">20</option>
                     </select>
 
                     <label for="divindade">Divindade</label>
-                    <input type="text" name="divindade" id="divindade">                    
+                    <input type="text" name="divindade" id="divindade">
                 </div>
             </fieldset>
-            <div>
-                <table border="1"> <!-- 7 linhas e 7 colunas -->
-                    <tr>
-                        <td>
-                            FOR
-                        </td>
-                        <td>
-                            DES
-                        </td>
-                        <td>
-                            CON
-                        </td>
-                        <td>
-                            INT
-                        </td>
-                        <td>
-                            SAB
-                        </td>
-                        <td>
-                            CAR
-                        </td>
-                        <td rowspan="6">
-                            <p>LISTA DE PERÍCIAS</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">
-                            PONTOS DE VIDA
-                        </td>
-                        <td colspan="3">
-                            PONTOS DE MANA
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="6">
-                            <p>ATAQUES</p>
-                            <p>Ataque 1</p>
-                            <p>Ataque 2</p>
-                            <p>ataque 3</p>
-                            <p>Ataque 4</p>
-                            <p>Ataque 5</p>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td colspan="4">
-                            <p>DEFESA</p>
-                        </td>
-                        <td colspan="2">
-                            PROFICIÊNCIAS
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="4"> 
-                            armadura & escudo
-                        </td>
-                        <td colspan="2">
-                            tamanho
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="4"> 
-                            EXP
-                        </td>
-                        <td colspan="2">
-                            DESLOCAMENTO
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="7">
-                            <p>EQUIPAMENTO</p>
-                            <p>item, peso</p>
-                            <p>tibares</p>
-                        </td>
-                    </tr>                   
-                </table>
-            </div>
         </form>
+        <!-- 7 linhas e 7 colunas -->
+        <table border="1">
+            <!-- linha dos Atributos -->
+            <tr>
+                <td>
+                    <label for="atFor">FOR</label>
+                    <br>
+                    <input type="number" name="atFor" id="atFor" min="-5" value="0">
+                </td>
+                <td>
+                    <label for="atDes">DES</label>
+                    <br>
+                    <input type="number" name="atDes" id="atDes" min="-5" value="0">
+                </td>
+                <td>
+                    <label for="atCon">CON</label>
+                    <br>
+                    <input type="number" name="atCon" id="atCon" min="-5" value="0">
+                </td>
+                <td>
+                    <label for="atInt">INT</label>
+                    <br>
+                    <input type="number" name="atInt" id="atInt" min="-5" value="0">
+                </td>
+                <td>
+                    <label for="atSab">SAB</label>
+                    <br>
+                    <input type="number" name="atSab" id="atSab" min="-5" value="0">
+                </td>
+                <td>
+                    <label for="atCar">CAR</label>
+                    <br>
+                    <input type="number" name="atCar" id="atCar" min="-5" value="0">
+                </td>
+                <!-- Coluna das Perícias -->
+                <td rowspan="6">
+                    <p>LISTA DE PERÍCIAS</p>
+                </td>
+            </tr>
+            <!-- Pontos de Vida e Mana -->
+            <tr>
+                <td colspan="3">PONTOS DE VIDA</td>
+                <td colspan="3">PONTOS DE MANA</td>
+            </tr>
+            <!-- Lista de Ataques & Armas -->
+            <tr>
+                <td colspan="6">
+                    <p>ATAQUES</p>
+                    <p>Ataque 1</p>
+                    <p>Ataque 2</p>
+                    <p>ataque 3</p>
+                    <p>Ataque 4</p>
+                    <p>Ataque 5</p>
+                </td>
+            </tr>
+            <!-- Defesa e Proeficiências -->
+            <tr>
+                <td colspan="4">
+                    <p>DEFESA</p>
+                </td>
+                <td colspan="2">PROFICIÊNCIAS</td>
+            </tr>
+            <!-- Armadura & Escudo; Modificadores de Tamanho -->
+            <tr>
+                <td colspan="4">armadura & escudo</td>
+                <td colspan="2">tamanho</td>
+            </tr>
+            <!-- EXP e Deslocamento -->
+            <tr>
+                <td colspan="4">EXP</td>
+                <td colspan="2">DESLOCAMENTO</td>
+            </tr>
+            <!-- Equipamento e Tibares -->
+            <tr>
+                <td colspan="7">
+                    <p>EQUIPAMENTO</p>
+                    <p>item, peso</p>
+                    <p>tibares</p>
+                </td>
+            </tr>
+        </table>
     </div>
-    
 </body>
+
 </html>
