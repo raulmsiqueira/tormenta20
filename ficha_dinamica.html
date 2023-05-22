@@ -127,14 +127,42 @@
                 <!-- Defesa e Proeficiências -->
                 <tr>
                     <td colspan="4">
-                        <p>DEFESA</p>
+                        <label for="defesa">DEFESA</label>
+                        <br>
+                        <p>
+                            <input type="number" name="defesa" id="defesa" value="10">
+                            = 10 +
+                            <input name="atDes" id="atDes" type="number"> +
+                            <input name="bonusArmadura" id="bonusArmadura" type="number"> +
+                            <input name="bonusEscudo" id="bonusEscudo" type="number"> +
+                            <input name="outrosDefesa" id="outrosDefesa" type="number">
+                        </p>
                     </td>
-                    <td colspan="2">PROFICIÊNCIAS</td>
+                    <td colspan="2">
+                        <label for="proficiencia">PROFICIÊNCIAS</label>
+                        <br>
+                        <textarea rows="4" cols="42" name="proficiencia" id="proficiencia"></textarea>
+                    </td>
                 </tr>
                 <!-- Armadura & Escudo; Modificadores de Tamanho -->
                 <tr>
-                    <td colspan="4">armadura & escudo</td>
-                    <td colspan="2">tamanho</td>
+                    <td colspan="4">
+                        <label for="armaduraEscudo">ARMADURA & ESCUDO</label>
+                        <br>
+                        <input type="text" name="armadura" id="armadura" placeholder="Armadura">
+                        <input type="number" name="bonusArmadura" id="bonusArmadura">
+                        <input type="number" name="penalArmadura" id="penalArmadura">
+                        <br>
+                        <input type="text" name="escudo" id="escudo" placeholder="Escudo">
+                        <input type="number" name="bonusEscudo" id="bonusEscudo">
+                        <input type="number" name="penalEscudo" id="penalEscudo">
+                    </td>
+                    <td colspan="2">
+                        <label for="tamanho">Tamanho</label>
+                        <select name="tamanho" id="tamanho">
+                            <option></option>
+                        </select>
+                    </td>
                 </tr>
                 <!-- EXP e Deslocamento -->
                 <tr>
