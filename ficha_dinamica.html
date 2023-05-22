@@ -163,21 +163,75 @@
                 <td colspan="2">
                     <label for="tamanho">Tamanho</label>
                     <select name="tamanho" id="tamanho">
-                        <option></option>
+                        <option value="pequeno">Pequeno (+2/-2)</option>
+                        <option value="medio" selected>Médio (0/0)</option>
+                        <option value="grande">Grande (-2/+2)</option>
                     </select>
                 </td>
             </tr>
             <!-- EXP e Deslocamento -->
             <tr>
-                <td colspan="4">EXP</td>
-                <td colspan="2">DESLOCAMENTO</td>
+                <td colspan="4">
+                    <label for="exp">EXPERIÊNCIA</label>
+                    <input type="number" name="exp" id="exp" min="0" value="0">
+                </td>
+                <td colspan="2">
+                    <label for="deslocamento">DESLOCAMENTO</label>
+                    <input type="number" name="deslocamento" id="deslocamento" min="0" value="9"> metros
+                </td>
             </tr>
             <!-- Equipamento e Tibares -->
             <tr>
                 <td colspan="7">
-                    <p>EQUIPAMENTO</p>
-                    <p>item, peso</p>
-                    <p>tibares</p>
+                    <form>
+                        <fieldset>
+                            <legend>EQUIPAMENTO</legend>
+                            <input type="text" name="item1" id="item1">
+                            <input type="number" name="peso1" id="peso1" min="0" value="0">
+                            <input type="text" name="item2" id="item2">
+                            <input type="number" name="peso2" id="peso2" min="0" value="0">
+                            <br>
+                            <input type="text" name="item3" id="item3">
+                            <input type="number" name="peso3" id="peso3" min="0" value="0">
+                            <input type="text" name="item4" id="item4">
+                            <input type="number" name="peso4" id="peso4" min="0" value="0">
+                            <br>
+                            <input type="text" name="item5" id="item5">
+                            <input type="number" name="peso5" id="peso5" min="0" value="0">
+                            <input type="text" name="item6" id="item6">
+                            <input type="number" name="peso6" id="peso6" min="0" value="0">
+                            <br>
+                            <input type="text" name="item7" id="item7">
+                            <input type="number" name="peso7" id="peso7" min="0" value="0">
+                            <input type="text" name="item8" id="item8">
+                            <input type="number" name="peso8" id="peso8" min="0" value="0">
+                            <br>
+                            <input type="text" name="item9" id="item9">
+                            <input type="number" name="peso9" id="peso9" min="0" value="0">
+                            <input type="text" name="item10" id="item10">
+                            <input type="number" name="peso10" id="peso10" min="0" value="0">
+                            <br>
+                            <input type="text" name="item11" id="item11">
+                            <input type="number" name="peso11" id="peso11" min="0" value="0">
+                            <input type="text" name="item12" id="item12">
+                            <input type="number" name="peso12" id="peso12" min="0" value="0">
+                            <br>
+                            <input type="text" name="item13" id="item13">
+                            <input type="number" name="peso13" id="peso13" min="0" value="0">
+                            <input type="text" name="item14" id="item14">
+                            <input type="number" name="peso14" id="peso14" min="0" value="0">
+                            <br>
+                            <input type="text" name="item15" id="item15">
+                            <input type="number" name="peso15" id="peso15" min="0" value="0">
+                            <label for="pesoTotal">Peso Total</label>
+                            <output name="pesoTotal"></output>
+                            <br>
+                            <input type="text" name="item16" id="item16">
+                            <input type="number" name="peso16" id="peso16" min="0" value="0">
+                            <input type="number" name="tibar" id="tibar" min="0" value="0">
+                            <input type="number" name="tibarOuro" id="tibarOuro" min="0" value="0">
+                        </fieldset>
+                    </form>
                 </td>
             </tr>
         </table>
