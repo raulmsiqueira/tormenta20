@@ -63,88 +63,94 @@
                     <input type="text" name="divindade" id="divindade">
                 </div>
             </fieldset>
+
+            <!-- 7 linhas e 7 colunas -->
+            <table border="1">
+                <!-- linha dos Atributos -->
+                <tr>
+                    <td>
+                        <label for="atFor">FOR</label>
+                        <br>
+                        <input type="number" name="atFor" id="atFor" min="-5" value="0">
+                    </td>
+                    <td>
+                        <label for="atDes">DES</label>
+                        <br>
+                        <input type="number" name="atDes" id="atDes" min="-5" value="0">
+                    </td>
+                    <td>
+                        <label for="atCon">CON</label>
+                        <br>
+                        <input type="number" name="atCon" id="atCon" min="-5" value="0">
+                    </td>
+                    <td>
+                        <label for="atInt">INT</label>
+                        <br>
+                        <input type="number" name="atInt" id="atInt" min="-5" value="0">
+                    </td>
+                    <td>
+                        <label for="atSab">SAB</label>
+                        <br>
+                        <input type="number" name="atSab" id="atSab" min="-5" value="0">
+                    </td>
+                    <td>
+                        <label for="atCar">CAR</label>
+                        <br>
+                        <input type="number" name="atCar" id="atCar" min="-5" value="0">
+                    </td>
+                    <!-- Coluna das Perícias -->
+                    <td rowspan="6">
+                        <p>LISTA DE PERÍCIAS</p>
+                    </td>
+                </tr>
+                <!-- Pontos de Vida e Mana -->
+                <tr>
+                    <td colspan="3">PONTOS DE VIDA</td>
+                    <td colspan="3">PONTOS DE MANA</td>
+                </tr>
+                <!-- Lista de Ataques & Armas -->
+                <tr>
+                    <td colspan="6">
+                        <label for="ataques">ATAQUES</label>
+                        <br>
+                        <input type="text" name="ataque1" id="ataques">
+                        <br>
+                        <input type="text" name="ataque2" id="ataques">
+                        <br>
+                        <input type="text" name="ataque3" id="ataques">
+                        <br>
+                        <input type="text" name="ataque4" id="ataques">
+                        <br>
+                        <input type="text" name="ataque5" id="ataques">
+                    </td>
+                </tr>
+                <!-- Defesa e Proeficiências -->
+                <tr>
+                    <td colspan="4">
+                        <p>DEFESA</p>
+                    </td>
+                    <td colspan="2">PROFICIÊNCIAS</td>
+                </tr>
+                <!-- Armadura & Escudo; Modificadores de Tamanho -->
+                <tr>
+                    <td colspan="4">armadura & escudo</td>
+                    <td colspan="2">tamanho</td>
+                </tr>
+                <!-- EXP e Deslocamento -->
+                <tr>
+                    <td colspan="4">EXP</td>
+                    <td colspan="2">DESLOCAMENTO</td>
+                </tr>
+                <!-- Equipamento e Tibares -->
+                <tr>
+                    <td colspan="7">
+                        <p>EQUIPAMENTO</p>
+                        <p>item, peso</p>
+                        <p>tibares</p>
+                    </td>
+                </tr>
+            </table>
         </form>
-        <!-- 7 linhas e 7 colunas -->
-        <table border="1">
-            <!-- linha dos Atributos -->
-            <tr>
-                <td>
-                    <label for="atFor">FOR</label>
-                    <br>
-                    <input type="number" name="atFor" id="atFor" min="-5" value="0">
-                </td>
-                <td>
-                    <label for="atDes">DES</label>
-                    <br>
-                    <input type="number" name="atDes" id="atDes" min="-5" value="0">
-                </td>
-                <td>
-                    <label for="atCon">CON</label>
-                    <br>
-                    <input type="number" name="atCon" id="atCon" min="-5" value="0">
-                </td>
-                <td>
-                    <label for="atInt">INT</label>
-                    <br>
-                    <input type="number" name="atInt" id="atInt" min="-5" value="0">
-                </td>
-                <td>
-                    <label for="atSab">SAB</label>
-                    <br>
-                    <input type="number" name="atSab" id="atSab" min="-5" value="0">
-                </td>
-                <td>
-                    <label for="atCar">CAR</label>
-                    <br>
-                    <input type="number" name="atCar" id="atCar" min="-5" value="0">
-                </td>
-                <!-- Coluna das Perícias -->
-                <td rowspan="6">
-                    <p>LISTA DE PERÍCIAS</p>
-                </td>
-            </tr>
-            <!-- Pontos de Vida e Mana -->
-            <tr>
-                <td colspan="3">PONTOS DE VIDA</td>
-                <td colspan="3">PONTOS DE MANA</td>
-            </tr>
-            <!-- Lista de Ataques & Armas -->
-            <tr>
-                <td colspan="6">
-                    <p>ATAQUES</p>
-                    <p>Ataque 1</p>
-                    <p>Ataque 2</p>
-                    <p>ataque 3</p>
-                    <p>Ataque 4</p>
-                    <p>Ataque 5</p>
-                </td>
-            </tr>
-            <!-- Defesa e Proeficiências -->
-            <tr>
-                <td colspan="4">
-                    <p>DEFESA</p>
-                </td>
-                <td colspan="2">PROFICIÊNCIAS</td>
-            </tr>
-            <!-- Armadura & Escudo; Modificadores de Tamanho -->
-            <tr>
-                <td colspan="4">armadura & escudo</td>
-                <td colspan="2">tamanho</td>
-            </tr>
-            <!-- EXP e Deslocamento -->
-            <tr>
-                <td colspan="4">EXP</td>
-                <td colspan="2">DESLOCAMENTO</td>
-            </tr>
-            <!-- Equipamento e Tibares -->
-            <tr>
-                <td colspan="7">
-                    <p>EQUIPAMENTO</p>
-                    <p>item, peso</p>
-                    <p>tibares</p>
-                </td>
-            </tr>
-        </table>
     </div>
 </body>
 
