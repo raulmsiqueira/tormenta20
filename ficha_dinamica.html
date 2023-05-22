@@ -63,11 +63,12 @@
                     <input type="text" name="divindade" id="divindade">
                 </div>
             </fieldset>
-
-            <!-- 7 linhas e 7 colunas -->
-            <table border="1">
-                <!-- linha dos Atributos -->
-                <tr>
+        </form>
+        <!-- 7 linhas e 7 colunas -->
+        <table border="1">
+            <!-- linha dos Atributos -->
+            <tr>
+                <form oninput="modDes.value=parseInt(atDes.value)"> <!-- formulário de Atributos -->
                     <td>
                         <label for="atFor">FOR</label>
                         <br>
@@ -98,87 +99,89 @@
                         <br>
                         <input type="number" name="atCar" id="atCar" min="-5" value="0">
                     </td>
-                    <!-- Coluna das Perícias -->
-                    <td rowspan="6">
-                        <p>LISTA DE PERÍCIAS</p>
-                    </td>
-                </tr>
-                <!-- Pontos de Vida e Mana -->
-                <tr>
-                    <td colspan="3">PONTOS DE VIDA</td>
-                    <td colspan="3">PONTOS DE MANA</td>
-                </tr>
-                <!-- Lista de Ataques & Armas -->
-                <tr>
-                    <td colspan="6">
-                        <label for="ataques">ATAQUES</label>
+                </form>
+                <!-- Coluna das Perícias -->
+                <td rowspan="6">
+                    <p>LISTA DE PERÍCIAS</p>
+                </td>
+            </tr>
+            <!-- Pontos de Vida e Mana -->
+            <tr>
+                <td colspan="3">PONTOS DE VIDA</td>
+                <td colspan="3">PONTOS DE MANA</td>
+            </tr>
+            <!-- Lista de Ataques & Armas -->
+            <tr>
+                <td colspan="6">
+                    <label for="ataques">ATAQUES</label>
+                    <br>
+                    <input type="text" name="ataque1" id="ataques">
+                    <br>
+                    <input type="text" name="ataque2" id="ataques">
+                    <br>
+                    <input type="text" name="ataque3" id="ataques">
+                    <br>
+                    <input type="text" name="ataque4" id="ataques">
+                    <br>
+                    <input type="text" name="ataque5" id="ataques">
+                </td>
+            </tr>
+            <!-- Defesa e Proeficiências -->
+            <tr>
+                <td colspan="4">
+                    <form
+                        oninput="defesa.value = 10 + parseInt(modDes.value) + parseInt(defArmadura.value) + parseInt(defEscudo.value) + parseInt(outrosDefesa.value)">
+                        <label for="defesa">DEFESA</label> =
+                        <label for="modDes">mod. de DES</label> +
+                        <label for="bonusArmadura">bônus de Armadura</label> +
+                        <label for="bonusEscudo">bônus de Escudo</label> +
+                        <label for="outrosDefesa">Outros</label>
                         <br>
-                        <input type="text" name="ataque1" id="ataques">
-                        <br>
-                        <input type="text" name="ataque2" id="ataques">
-                        <br>
-                        <input type="text" name="ataque3" id="ataques">
-                        <br>
-                        <input type="text" name="ataque4" id="ataques">
-                        <br>
-                        <input type="text" name="ataque5" id="ataques">
-                    </td>
-                </tr>
-                <!-- Defesa e Proeficiências -->
-                <tr>
-                    <td colspan="4">
-                        <label for="defesa">DEFESA</label>
-                        <br>
-                        <p>
-                            <input type="number" name="defesa" id="defesa" value="10">
-                            = 10 +
-                            <input name="atDes" id="atDes" type="number"> +
-                            <input name="bonusArmadura" id="bonusArmadura" type="number"> +
-                            <input name="bonusEscudo" id="bonusEscudo" type="number"> +
-                            <input name="outrosDefesa" id="outrosDefesa" type="number">
-                        </p>
-                    </td>
-                    <td colspan="2">
-                        <label for="proficiencia">PROFICIÊNCIAS</label>
-                        <br>
-                        <textarea rows="4" cols="42" name="proficiencia" id="proficiencia"></textarea>
-                    </td>
-                </tr>
-                <!-- Armadura & Escudo; Modificadores de Tamanho -->
-                <tr>
-                    <td colspan="4">
-                        <label for="armaduraEscudo">ARMADURA & ESCUDO</label>
-                        <br>
-                        <input type="text" name="armadura" id="armadura" placeholder="Armadura">
-                        <input type="number" name="bonusArmadura" id="bonusArmadura">
-                        <input type="number" name="penalArmadura" id="penalArmadura">
-                        <br>
-                        <input type="text" name="escudo" id="escudo" placeholder="Escudo">
-                        <input type="number" name="bonusEscudo" id="bonusEscudo">
-                        <input type="number" name="penalEscudo" id="penalEscudo">
-                    </td>
-                    <td colspan="2">
-                        <label for="tamanho">Tamanho</label>
-                        <select name="tamanho" id="tamanho">
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                <!-- EXP e Deslocamento -->
-                <tr>
-                    <td colspan="4">EXP</td>
-                    <td colspan="2">DESLOCAMENTO</td>
-                </tr>
-                <!-- Equipamento e Tibares -->
-                <tr>
-                    <td colspan="7">
-                        <p>EQUIPAMENTO</p>
-                        <p>item, peso</p>
-                        <p>tibares</p>
-                    </td>
-                </tr>
-            </table>
-        </form>
+                        <output name="defesa" for="atDes defArmadura defEscudo outrosDefesa"></output> = 10 +
+                        <input type="number" name="modDes" id="modDes" value="0"> +
+                        <input type="number" name="defArmadura" id="defArmadura" value="0"> +
+                        <input type="number" name="defEscudo" id="defEscudo" value="0"> +
+                        <input name="outrosDefesa" id="outrosDefesa" type="number" value="0">
+                    </form>
+                </td>
+                <td colspan="2">
+                    <label for="proficiencia">PROFICIÊNCIAS</label>
+                    <br>
+                    <textarea rows="4" cols="42" name="proficiencia" id="proficiencia"></textarea>
+                </td>
+            </tr>
+            <!-- Armadura & Escudo; Modificadores de Tamanho -->
+            <tr>
+                <td colspan="4">
+                    <label for="armaduraEscudo">ARMADURA & ESCUDO</label>
+                    <br>
+                    <input type="text" name="armadura" id="armadura" placeholder="Armadura">
+                    <br>
+                    <input type="text" name="escudo" id="escudo" placeholder="Escudo">
+                </td>
+
+                <td colspan="2">
+                    <label for="tamanho">Tamanho</label>
+                    <select name="tamanho" id="tamanho">
+                        <option></option>
+                    </select>
+                </td>
+            </tr>
+            <!-- EXP e Deslocamento -->
+            <tr>
+                <td colspan="4">EXP</td>
+                <td colspan="2">DESLOCAMENTO</td>
+            </tr>
+            <!-- Equipamento e Tibares -->
+            <tr>
+                <td colspan="7">
+                    <p>EQUIPAMENTO</p>
+                    <p>item, peso</p>
+                    <p>tibares</p>
+                </td>
+            </tr>
+        </table>
+
     </div>
 </body>
 
