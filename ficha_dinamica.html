@@ -21,25 +21,25 @@
                 <legend>Cabeçalho da Ficha</legend>
                 <div>
                     <label for="personagem">Personagem</label>
-                    <input type="text" name="personagem" id="personagem">
+                    <input type="text" name="personagem" id="ipersonagem">
 
                     <label for="jogador">Jogador</label>
-                    <input type="text" name="jogador" id="jogador">
+                    <input type="text" name="jogador" id="ijogador">
                 </div>
                 <br>
                 <div>
                     <label for="raca">Raça</label>
-                    <input type="text" name="raca" id="raca">
+                    <input type="text" name="raca" id="iraca">
 
                     <label for="origem">Origem</label>
-                    <input type="text" name="origem" id="origem">
+                    <input type="text" name="origem" id="iorigem">
 
                     <label for="classeP">Classe</label>
-                    <input type="text" name="classeP" id="classeP">
+                    <input type="text" name="classeP" id="iclasseP">
 
                     <label for="nivel">Nível</label>
                     <!-- <input> ou <select> ? -->
-                    <select name="nivel" id="nivel">
+                    <select name="nivel" id="inivel">
                         <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -62,7 +62,7 @@
                         <option value="20">20</option>
                     </select>
                     <label for="divindade">Divindade</label>
-                    <input type="text" name="divindade" id="divindade">
+                    <input type="text" name="divindade" id="idivindade">
                 </div>
             </fieldset>
         </form>
@@ -70,24 +70,36 @@
         <!-- div dos Atributos -->
         <div class="row">
             <div class="col">
-                <form> <!-- formulário de Atributos -->
+                <!-- formulário de Atributos -->
+                <form>
                     <label for="atFor">FOR</label>
-                    <input type="number" name="atFor" id="atFor" min="-5" value="0">
+                    <input type="number" name="atFor" id="iatFor" min="-5" value="0">
                     <label for="atDes">DES</label>
-                    <input type="number" name="atDes" id="atDes" min="-5" value="0">
+                    <input type="number" name="atDes" id="iatDes" min="-5" value="0">
                     <label for="atCon">CON</label>
-                    <input type="number" name="atCon" id="atCon" min="-5" value="0">
+                    <input type="number" name="atCon" id="iatCon" min="-5" value="0">
                     <label for="atInt">INT</label>
-                    <input type="number" name="atInt" id="atInt" min="-5" value="0">
+                    <input type="number" name="atInt" id="iatInt" min="-5" value="0">
                     <label for="atSab">SAB</label>
-                    <input type="number" name="atSab" id="atSab" min="-5" value="0">
+                    <input type="number" name="atSab" id="iatSab" min="-5" value="0">
                     <label for="atCar">CAR</label>
-                    <input type="number" name="atCar" id="atCar" min="-5" value="0">
+                    <input type="number" name="atCar" id="iatCar" min="-5" value="0">
                 </form>
             </div>
             <!-- div das Perícias -->
             <div class="col align-self-end border border-danger-subtle">
-                <p>LISTA DE PERÍCIAS</p>
+                <form>
+                    <fieldset>
+                        <legend>PERÍCIAS</legend>
+
+                        <label for="acrobacia">Acrobacia</label>
+                        <output name="acrobacia"></output>=
+                        <output name="meioNivel"></output>+
+                        <output name="treino"></output>+
+                        <input type="number" name="bonusAcrobacia">
+
+                    </fieldset>
+                </form>
             </div>
         </div>
 
@@ -106,15 +118,15 @@
             <div class="col-7">
                 <label for="ataques">ATAQUES</label>
                 <br>
-                <input type="text" name="ataque1" id="ataques">
+                <input type="text" name="ataque1" id="iataques">
                 <br>
-                <input type="text" name="ataque2" id="ataques">
+                <input type="text" name="ataque2" id="iataques">
                 <br>
-                <input type="text" name="ataque3" id="ataques">
+                <input type="text" name="ataque3" id="iataques">
                 <br>
-                <input type="text" name="ataque4" id="ataques">
+                <input type="text" name="ataque4" id="iataques">
                 <br>
-                <input type="text" name="ataque5" id="ataques">
+                <input type="text" name="ataque5" id="iataques">
             </div>
         </div>
         <br>
@@ -122,25 +134,26 @@
         <div class="row">
             <div class="col-4">
                 <form
-                    oninput="defesa.value = 10 + parseInt(modDes.value) + parseInt(defArmadura.value) + parseInt(defEscudo.value) + parseInt(outrosDefesa.value)">
-                    <label for="defesa">DEFESA</label> =
-                    <label for="modDes">DES</label> +
-                    <label for="bonusArmadura">Armadura</label> +
-                    <label for="bonusEscudo">Escudo</label> +
-                    <label for="outrosDefesa">Outros</label>
+                    oninput="idefesa.value = 10 + parseInt(idefDes.value) + parseInt(idefArmadura.value) + parseInt(idefEscudo.value) + parseInt(ioutrosDefesa.value)">
+                    <!-- substituir por uma função -->
+                    <label for="idefesa">DEFESA</label> =
+                    <label for="idefDes">DES</label> +
+                    <label for="idefArmadura">Armadura</label> +
+                    <label for="idefEscudo">Escudo</label> +
+                    <label for="ioutrosDefesa">Outros</label>
                     <br>
-                    <output name="defesa" for="atDes defArmadura defEscudo outrosDefesa"></output> = 10 +
-                    <input type="number" name="modDes" id="modDes" value="0" min="-5"> +
+                    <output name="defesa" id="idefesa"></output> = 10 +
+                    <input type="number" name="defDes" id="idefDes" value="0" min="-5"> +
                     <!-- mudar esse input por um output -->
-                    <input type="number" name="defArmadura" id="defArmadura" value="0" min="0"> +
-                    <input type="number" name="defEscudo" id="defEscudo" value="0" min="0"> +
-                    <input name="outrosDefesa" id="outrosDefesa" type="number" value="0">
+                    <input type="number" name="defArmadura" id="idefArmadura" value="0" min="0"> +
+                    <input type="number" name="defEscudo" id="idefEscudo" value="0" min="0"> +
+                    <input name="outrosDefesa" id="ioutrosDefesa" type="number" value="0">
                 </form>
             </div>
             <div class="col-3">
                 <label for="proficiencia">PROFICIÊNCIAS</label>
                 <br>
-                <textarea rows="4" cols="42" name="proficiencia" id="proficiencia"></textarea>
+                <textarea rows="4" cols="42" name="proficiencia" id="iproficiencia"></textarea>
             </div>
         </div>
         <br>
@@ -149,9 +162,9 @@
                 <!-- Armadura & Escudo; Modificadores de Tamanho -->
                 <label for="armaduraEscudo">ARMADURA & ESCUDO</label>
                 <br>
-                <input type="text" name="armadura" id="armadura" placeholder="Armadura">
+                <input type="text" name="armadura" id="iarmadura" placeholder="Armadura">
                 <br>
-                <input type="text" name="escudo" id="escudo" placeholder="Escudo">
+                <input type="text" name="escudo" id="iescudo" placeholder="Escudo">
             </div>
 
         </div>
@@ -160,11 +173,11 @@
         <div class="row">
             <div class="col-3">
                 <label for="exp">EXPERIÊNCIA</label>
-                <input type="number" name="exp" id="exp" min="0" value="0">
+                <input type="number" name="exp" id="iexp" min="0" value="0">
             </div>
             <div class="col-2">
                 <label for="tamanho">TAMANHO</label>
-                <select name="tamanho" id="tamanho">
+                <select name="tamanho" id="itamanho">
                     <option value="pequeno">Pequeno (+2/-2)</option>
                     <option value="medio" selected>Médio (0/0)</option>
                     <option value="grande">Grande (-2/+2)</option>
@@ -172,7 +185,7 @@
             </div>
             <div class="col-2">
                 <label for="deslocamento">DESLOCAMENTO</label>
-                <input type="number" name="deslocamento" id="deslocamento" min="0" value="9"> metros
+                <input type="number" name="deslocamento" id="ideslocamento" min="0" value="9"> metros
             </div>
         </div>
         <br>
@@ -181,54 +194,56 @@
             <form>
                 <fieldset>
                     <legend>EQUIPAMENTO</legend>
-                    <input type="text" name="item1" id="item1">
-                    <input type="number" name="peso1" id="peso1" min="0" value="0">
-                    <input type="text" name="item2" id="item2">
-                    <input type="number" name="peso2" id="peso2" min="0" value="0">
+                    <input type="text" name="item1" id="iitem1">
+                    <input type="number" name="peso1" id="ipeso1" min="0" value="0">
+                    <input type="text" name="item2" id="iitem2">
+                    <input type="number" name="peso2" id="ipeso2" min="0" value="0">
                     <br>
-                    <input type="text" name="item3" id="item3">
-                    <input type="number" name="peso3" id="peso3" min="0" value="0">
-                    <input type="text" name="item4" id="item4">
-                    <input type="number" name="peso4" id="peso4" min="0" value="0">
+                    <input type="text" name="item3" id="iitem3">
+                    <input type="number" name="peso3" id="ipeso3" min="0" value="0">
+                    <input type="text" name="item4" id="iitem4">
+                    <input type="number" name="peso4" id="ipeso4" min="0" value="0">
                     <br>
-                    <input type="text" name="item5" id="item5">
-                    <input type="number" name="peso5" id="peso5" min="0" value="0">
-                    <input type="text" name="item6" id="item6">
-                    <input type="number" name="peso6" id="peso6" min="0" value="0">
+                    <input type="text" name="item5" id="iitem5">
+                    <input type="number" name="peso5" id="ipeso5" min="0" value="0">
+                    <input type="text" name="item6" id="iitem6">
+                    <input type="number" name="peso6" id="ipeso6" min="0" value="0">
                     <br>
-                    <input type="text" name="item7" id="item7">
-                    <input type="number" name="peso7" id="peso7" min="0" value="0">
-                    <input type="text" name="item8" id="item8">
-                    <input type="number" name="peso8" id="peso8" min="0" value="0">
+                    <input type="text" name="item7" id="iitem7">
+                    <input type="number" name="peso7" id="ipeso7" min="0" value="0">
+                    <input type="text" name="item8" id="iitem8">
+                    <input type="number" name="peso8" id="ipeso8" min="0" value="0">
                     <br>
-                    <input type="text" name="item9" id="item9">
-                    <input type="number" name="peso9" id="peso9" min="0" value="0">
-                    <input type="text" name="item10" id="item10">
-                    <input type="number" name="peso10" id="peso10" min="0" value="0">
+                    <input type="text" name="item9" id="iitem9">
+                    <input type="number" name="peso9" id="ipeso9" min="0" value="0">
+                    <input type="text" name="item10" id="iitem10">
+                    <input type="number" name="peso10" id="ipeso10" min="0" value="0">
                     <br>
-                    <input type="text" name="item11" id="item11">
-                    <input type="number" name="peso11" id="peso11" min="0" value="0">
-                    <input type="text" name="item12" id="item12">
-                    <input type="number" name="peso12" id="peso12" min="0" value="0">
+                    <input type="text" name="item11" id="iitem11">
+                    <input type="number" name="peso11" id="ipeso11" min="0" value="0">
+                    <input type="text" name="item12" id="iitem12">
+                    <input type="number" name="peso12" id="ipeso12" min="0" value="0">
                     <br>
-                    <input type="text" name="item13" id="item13">
-                    <input type="number" name="peso13" id="peso13" min="0" value="0">
-                    <input type="text" name="item14" id="item14">
-                    <input type="number" name="peso14" id="peso14" min="0" value="0">
+                    <input type="text" name="item13" id="iitem13">
+                    <input type="number" name="peso13" id="ipeso13" min="0" value="0">
+                    <input type="text" name="item14" id="iitem14">
+                    <input type="number" name="peso14" id="ipeso14" min="0" value="0">
                     <br>
-                    <input type="text" name="item15" id="item15">
-                    <input type="number" name="peso15" id="peso15" min="0" value="0">
+                    <input type="text" name="item15" id="iitem15">
+                    <input type="number" name="peso15" id="ipeso15" min="0" value="0">
                     <label for="pesoTotal">Peso Total</label>
                     <output name="pesoTotal"></output>
                     <br>
-                    <input type="text" name="item16" id="item16">
-                    <input type="number" name="peso16" id="peso16" min="0" value="0">
-                    <input type="number" name="tibar" id="tibar" min="0" value="0">
-                    <input type="number" name="tibarOuro" id="tibarOuro" min="0" value="0">
+                    <input type="text" name="item16" id="iitem16">
+                    <input type="number" name="peso16" id="ipeso16" min="0" value="0">
+                    <input type="number" name="tibar" id="itibar" min="0" value="0">
+                    <input type="number" name="tibarOuro" id="itibarOuro" min="0" value="0">
                 </fieldset>
             </form>
         </div>
     </div>
+
+    <script src="script_tormenta20_v1.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
