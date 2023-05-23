@@ -100,68 +100,84 @@
                 <p>PONTOS DE MANA</p>
             </div>
         </div>
+        <br>
         <!-- div Lista de Ataques & Armas -->
         <div class="row">
-            <label for="ataques">ATAQUES</label>
-            <br>
-            <input type="text" name="ataque1" id="ataques">
-            <br>
-            <input type="text" name="ataque2" id="ataques">
-            <br>
-            <input type="text" name="ataque3" id="ataques">
-            <br>
-            <input type="text" name="ataque4" id="ataques">
-            <br>
-            <input type="text" name="ataque5" id="ataques">
+            <div class="col-7">
+                <label for="ataques">ATAQUES</label>
+                <br>
+                <input type="text" name="ataque1" id="ataques">
+                <br>
+                <input type="text" name="ataque2" id="ataques">
+                <br>
+                <input type="text" name="ataque3" id="ataques">
+                <br>
+                <input type="text" name="ataque4" id="ataques">
+                <br>
+                <input type="text" name="ataque5" id="ataques">
+            </div>
         </div>
+        <br>
         <!-- Defesa e Proeficiências -->
         <div class="row">
-            <div class="col">
+            <div class="col-4">
                 <form
                     oninput="defesa.value = 10 + parseInt(modDes.value) + parseInt(defArmadura.value) + parseInt(defEscudo.value) + parseInt(outrosDefesa.value)">
                     <label for="defesa">DEFESA</label> =
-                    <label for="modDes">mod. de DES</label> +
-                    <label for="bonusArmadura">bônus de Armadura</label> +
-                    <label for="bonusEscudo">bônus de Escudo</label> +
+                    <label for="modDes">DES</label> +
+                    <label for="bonusArmadura">Armadura</label> +
+                    <label for="bonusEscudo">Escudo</label> +
                     <label for="outrosDefesa">Outros</label>
                     <br>
                     <output name="defesa" for="atDes defArmadura defEscudo outrosDefesa"></output> = 10 +
-                    <input type="number" name="modDes" id="modDes" value="0"> + <!-- mudar esse input por um output -->
-                    <input type="number" name="defArmadura" id="defArmadura" value="0"> +
-                    <input type="number" name="defEscudo" id="defEscudo" value="0"> +
+                    <input type="number" name="modDes" id="modDes" value="0" min="-5"> +
+                    <!-- mudar esse input por um output -->
+                    <input type="number" name="defArmadura" id="defArmadura" value="0" min="0"> +
+                    <input type="number" name="defEscudo" id="defEscudo" value="0" min="0"> +
                     <input name="outrosDefesa" id="outrosDefesa" type="number" value="0">
                 </form>
             </div>
-            <div class="col">
+            <div class="col-3">
                 <label for="proficiencia">PROFICIÊNCIAS</label>
                 <br>
                 <textarea rows="4" cols="42" name="proficiencia" id="proficiencia"></textarea>
             </div>
         </div>
-        <div>
-            <!-- Armadura & Escudo; Modificadores de Tamanho -->
-            <label for="armaduraEscudo">ARMADURA & ESCUDO</label>
-            <br>
-            <input type="text" name="armadura" id="armadura" placeholder="Armadura">
-            <br>
-            <input type="text" name="escudo" id="escudo" placeholder="Escudo">
-            <label for="tamanho">Tamanho</label>
-            <select name="tamanho" id="tamanho">
-                <option value="pequeno">Pequeno (+2/-2)</option>
-                <option value="medio" selected>Médio (0/0)</option>
-                <option value="grande">Grande (-2/+2)</option>
-            </select>
-        </div>
-        <!-- EXP e Deslocamento -->
-        <div>
-            <label for="exp">EXPERIÊNCIA</label>
-            <input type="number" name="exp" id="exp" min="0" value="0">
-            <label for="deslocamento">DESLOCAMENTO</label>
-            <input type="number" name="deslocamento" id="deslocamento" min="0" value="9"> metros
+        <br>
+        <div class="row">
+            <div class="col">
+                <!-- Armadura & Escudo; Modificadores de Tamanho -->
+                <label for="armaduraEscudo">ARMADURA & ESCUDO</label>
+                <br>
+                <input type="text" name="armadura" id="armadura" placeholder="Armadura">
+                <br>
+                <input type="text" name="escudo" id="escudo" placeholder="Escudo">
+            </div>
 
         </div>
+        <br>
+        <!-- EXP e Deslocamento -->
+        <div class="row">
+            <div class="col-3">
+                <label for="exp">EXPERIÊNCIA</label>
+                <input type="number" name="exp" id="exp" min="0" value="0">
+            </div>
+            <div class="col-2">
+                <label for="tamanho">TAMANHO</label>
+                <select name="tamanho" id="tamanho">
+                    <option value="pequeno">Pequeno (+2/-2)</option>
+                    <option value="medio" selected>Médio (0/0)</option>
+                    <option value="grande">Grande (-2/+2)</option>
+                </select>
+            </div>
+            <div class="col-2">
+                <label for="deslocamento">DESLOCAMENTO</label>
+                <input type="number" name="deslocamento" id="deslocamento" min="0" value="9"> metros
+            </div>
+        </div>
+        <br>
         <!-- Equipamento e Tibares -->
-        <div>
+        <div class="row">
             <form>
                 <fieldset>
                     <legend>EQUIPAMENTO</legend>
