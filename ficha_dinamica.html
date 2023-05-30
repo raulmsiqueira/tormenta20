@@ -16,30 +16,29 @@
 <body>
     <div class="container">
         <h1>TORMENTA20 - Ficha de Personagem</h1>
-        <form>
+        <form name="formCabecalho" id="iformCabecalho" action="#" method="get">
             <fieldset>
                 <legend>Cabeçalho da Ficha</legend>
                 <div>
-                    <label for="personagem">Personagem</label>
+                    <label for="ipersonagem">Personagem</label>
                     <input type="text" name="personagem" id="ipersonagem">
 
-                    <label for="jogador">Jogador</label>
+                    <label for="ijogador">Jogador(a)</label>
                     <input type="text" name="jogador" id="ijogador">
                 </div>
                 <br>
                 <div>
-                    <label for="raca">Raça</label>
+                    <label for="iraca">Raça</label>
                     <input type="text" name="raca" id="iraca">
 
-                    <label for="origem">Origem</label>
+                    <label for="iorigem">Origem</label>
                     <input type="text" name="origem" id="iorigem">
 
-                    <label for="classeP">Classe</label>
+                    <label for="iclasseP">Classe</label>
                     <input type="text" name="classeP" id="iclasseP">
 
-                    <label for="nivel">Nível</label>
-                    <!-- <input> ou <select> ? -->
-                    <select name="nivel" id="inivel">
+                    <label for="inivel">Nível</label>
+                    <select name="nivel" id="inivel" oninput="funcNivel()">
                         <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -61,7 +60,7 @@
                         <option value="19">19</option>
                         <option value="20">20</option>
                     </select>
-                    <label for="divindade">Divindade</label>
+                    <label for="idivindade">Divindade</label>
                     <input type="text" name="divindade" id="idivindade">
                 </div>
             </fieldset>
@@ -71,34 +70,122 @@
         <div class="row">
             <div class="col">
                 <!-- formulário de Atributos -->
-                <form>
-                    <label for="atFor">FOR</label>
-                    <input type="number" name="atFor" id="iatFor" min="-5" value="0">
-                    <label for="atDes">DES</label>
-                    <input type="number" name="atDes" id="iatDes" min="-5" value="0">
-                    <label for="atCon">CON</label>
-                    <input type="number" name="atCon" id="iatCon" min="-5" value="0">
-                    <label for="atInt">INT</label>
-                    <input type="number" name="atInt" id="iatInt" min="-5" value="0">
-                    <label for="atSab">SAB</label>
-                    <input type="number" name="atSab" id="iatSab" min="-5" value="0">
-                    <label for="atCar">CAR</label>
-                    <input type="number" name="atCar" id="iatCar" min="-5" value="0">
+                <form method="get" name="formAtr" id="iformAtr">
+                    <table>
+                        <tr class="text-center">
+                            <td>
+                                <label for="iatFor">FOR</label>
+                            </td>
+                            <td>
+                                <label for="iatDes">DES</label>
+                            </td>
+                            <td>
+                                <label for="iatCon">CON</label>
+                            </td>
+                            <td>
+                                <label for="iatInt">INT</label>
+                            </td>
+                            <td>
+                                <label for="iatSab">SAB</label>
+                            </td>
+                            <td>
+                                <label for="iatCar">CAR</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="number" name="atFor" id="iatFor" min="-5" value="0"
+                                    oninput="funcBonusFor()">
+                            </td>
+                            <td>
+                                <input type="number" name="atDes" id="iatDes" min="-5" value="0"
+                                    oninput="funcBonusDes()" onclick="funcDef()">
+                            </td>
+                            <td>
+                                <input type="number" name="atCon" id="iatCon" min="-5" value="0"
+                                    oninput="funcBonusCon()">
+                            </td>
+                            <td>
+                                <input type="number" name="atInt" id="iatInt" min="-5" value="0"
+                                    oninput="funcBonusInt()">
+                            </td>
+                            <td>
+                                <input type="number" name="atSab" id="iatSab" min="-5" value="0"
+                                    oninput="funcBonusSab()">
+                            </td>
+                            <td>
+                                <input type="number" name="atCar" id="iatCar" min="-5" value="0"
+                                    oninput="funcBonusCar()">
+                            </td>
+                        </tr>
+                    </table>
                 </form>
             </div>
             <!-- div das Perícias -->
             <div class="col align-self-end border border-danger-subtle">
-                <form>
-                    <fieldset>
-                        <legend>PERÍCIAS</legend>
+                <form name="formPeri" id="iformPeri" method="get" oninput="funcSomaPeri()">
+                    <p>PERÍCIAS: Total = Nv + Atr + Treino + Outros</p>
 
-                        <label for="acrobacia">Acrobacia</label>
-                        <output name="acrobacia"></output>=
-                        <output name="meioNivel"></output>+
-                        <output name="treino"></output>+
-                        <input type="number" name="bonusAcrobacia">
+                    <input type="checkbox" name="cbAcro" id="icbAcro" value="0"
+                        oninput="itrAcro.innerHTML = funcTreino(icbAcro.checked)">
+                    <label for="iperiAcro">Acrobacia</label> &nbsp;
+                    <output name="periAcro" id="iperiAcro">0</output> &nbsp; = &nbsp;
+                    <output name="mNvAcrob" id="imNvAcrob">0</output> &nbsp; + &nbsp;
+                    <output name="modDesAcro" id="imodDesAcro">0</output> &nbsp; + &nbsp;
+                    <output name="trAcro" id="itrAcro">0</output> &nbsp; + &nbsp;
+                    <input type="number" name="bonusAcro" id="ibonusAcro" value="0">
+                    <br>
 
-                    </fieldset>
+                    <input type="checkbox" name="cbAtle" id="icbAtle" value="0"
+                        oninput="itrAtle.innerHTML = funcTreino(icbAtle.checked)">
+                    <label for="iperiAtle">Atletismo</label> &nbsp;
+                    <output name="periAtle" id="iperiAtle">0</output> &nbsp; = &nbsp;
+                    <output name="mNvAtle" id="imNvAtle">0</output> &nbsp; + &nbsp;
+                    <output name="modForAtle" id="imodForAtle">0</output> &nbsp; + &nbsp;
+                    <output name="trAtle" id="itrAtle">0</output> &nbsp; + &nbsp;
+                    <input type="number" name="bonusAtle" id="ibonusAtle" value="0">
+                    <br>
+
+                    <input type="checkbox" name="cbAtua" id="icbAtua" value="0"
+                        oninput="itrAtua.innerHTML = funcTreino(icbAtua.checked)">
+                    <label for="iperiAtua">Atuação</label> &nbsp;
+                    <output name="periAtua" id="iperiAtua">0</output> &nbsp; = &nbsp;
+                    <output name="mNvAtua" id="imNvAtua">0</output> &nbsp; + &nbsp;
+                    <output name="modCarAtua" id="imodCarAtua">0</output> &nbsp; + &nbsp;
+                    <output name="trAtua" id="itrAtua">0</output> &nbsp; + &nbsp;
+                    <input type="number" name="bonusAtua" id="ibonusAtua" value="0">
+                    <br>
+
+                    <input type="checkbox" name="cbConh" id="icbConh" value="0"
+                        oninput="itrConh.innerHTML = funcTreino(icbConh.checked)">
+                    <label for="iperiConh">Conhecimento</label> &nbsp;
+                    <output name="periConh" id="iperiConh">0</output> &nbsp; = &nbsp;
+                    <output name="mNvConh" id="imNvConh">0</output> &nbsp; + &nbsp;
+                    <output name="modIntConh" id="imodIntConh">0</output> &nbsp; + &nbsp;
+                    <output name="trConh" id="itrConh">0</output> &nbsp; + &nbsp;
+                    <input type="number" name="bonusConh" id="ibonusConh" value="0">
+                    <br>
+
+                    <input type="checkbox" name="cbCura" id="icbCura" value="0"
+                        oninput="itrCura.innerHTML = funcTreino(icbCura.checked)">
+                    <label for="iperiCura">Cura</label> &nbsp;
+                    <output name="periCura" id="iperiCura">0</output> &nbsp; = &nbsp;
+                    <output name="mNvCura" id="imNvCura">0</output> &nbsp; + &nbsp;
+                    <output name="modSabCura" id="imodSabCura">0</output> &nbsp; + &nbsp;
+                    <output name="trCura" id="itrCura">0</output> &nbsp; + &nbsp;
+                    <input type="number" name="bonusCura" id="ibonusCura" value="0">
+                    <br>
+
+                    <input type="checkbox" name="cbFort" id="icbFort" value="0"
+                        oninput="itrFort.innerHTML = funcTreino(icbFort.checked)">
+                    <label for="iperiFort">Fortitude</label> &nbsp;
+                    <output name="periFort" id="iperiFort">0</output> &nbsp; = &nbsp;
+                    <output name="mNvFort" id="imNvFort">0</output> &nbsp; + &nbsp;
+                    <output name="modConFort" id="imodConFort">0</output> &nbsp; + &nbsp;
+                    <output name="trFort" id="itrFort">0</output> &nbsp; + &nbsp;
+                    <input type="number" name="bonusFort" id="ibonusFort" value="0">
+                    <br>
+
                 </form>
             </div>
         </div>
@@ -116,7 +203,7 @@
         <!-- div Lista de Ataques & Armas -->
         <div class="row">
             <div class="col-7">
-                <label for="ataques">ATAQUES</label>
+                <label for="iataques">ATAQUES</label>
                 <br>
                 <input type="text" name="ataque1" id="iataques">
                 <br>
@@ -133,25 +220,31 @@
         <!-- Defesa e Proeficiências -->
         <div class="row">
             <div class="col-4">
-                <form
-                    oninput="idefesa.value = 10 + parseInt(idefDes.value) + parseInt(idefArmadura.value) + parseInt(idefEscudo.value) + parseInt(ioutrosDefesa.value)">
-                    <!-- substituir por uma função -->
-                    <label for="idefesa">DEFESA</label> =
-                    <label for="idefDes">DES</label> +
-                    <label for="idefArmadura">Armadura</label> +
-                    <label for="idefEscudo">Escudo</label> +
-                    <label for="ioutrosDefesa">Outros</label>
-                    <br>
-                    <output name="defesa" id="idefesa"></output> = 10 +
-                    <input type="number" name="defDes" id="idefDes" value="0" min="-5"> +
-                    <!-- mudar esse input por um output -->
-                    <input type="number" name="defArmadura" id="idefArmadura" value="0" min="0"> +
-                    <input type="number" name="defEscudo" id="idefEscudo" value="0" min="0"> +
-                    <input name="outrosDefesa" id="ioutrosDefesa" type="number" value="0">
+                <!-- substituir por uma função -->
+                <form name="formDef" id="iformDef" method="get" oninput="funcDef()">
+                    <p>
+                        <label for="idefesa">DEFESA</label>=
+                        <label for="idesDef">DES</label>+
+                        <label for="iarmdDef">Armadura</label>+
+                        <label for="iescDef">Escudo</label>+
+                        <label for="ioutrDef">Outros</label>
+                    </p>
+                    <p>
+                        &nbsp; &nbsp;
+                        <output name="defesa" id="idefesa">10</output> = 10 +
+                        &nbsp;
+                        <output name="desDef" id="idesDef">0</output> &nbsp; &nbsp; +
+                        &nbsp; &nbsp;
+                        <output name="armdBonus" id="iarmdBonus">0</output> &nbsp; &nbsp; +
+                        &nbsp; &nbsp;
+                        <output name="escBonus" id="iescBonus">0</output> &nbsp; &nbsp; +
+                        &nbsp; &nbsp;
+                        <input type="number" name="outrDef" id="ioutrDef" value="0">
+                    </p>
                 </form>
             </div>
             <div class="col-3">
-                <label for="proficiencia">PROFICIÊNCIAS</label>
+                <label for="iproficiencia">PROFICIÊNCIAS</label>
                 <br>
                 <textarea rows="4" cols="42" name="proficiencia" id="iproficiencia"></textarea>
             </div>
@@ -159,24 +252,47 @@
         <br>
         <div class="row">
             <div class="col">
-                <!-- Armadura & Escudo; Modificadores de Tamanho -->
-                <label for="armaduraEscudo">ARMADURA & ESCUDO</label>
-                <br>
-                <input type="text" name="armadura" id="iarmadura" placeholder="Armadura">
-                <br>
-                <input type="text" name="escudo" id="iescudo" placeholder="Escudo">
+                <!-- Armadura & Escudo -->
+                <form name="formArmdEsc" id="iformArmdEsc" method="get" oninput="funcDef()">
+                    <p>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp;
+                        Defesa | Penal. | Tipo
+                    </p>
+                    <p>
+                        <label for="iarmdNome">Armadura:</label>
+                        <input type="text" name="armdNome" id="iarmdNome">
+                        <input type="number" name="armdDef" id="iarmdDef" value="0" min="0"
+                            oninput="iarmdBonus.innerHTML=iarmdDef.value">
+                        <input type="number" name="penArmd" id="ipenArmd" value="0" max="0" oninput="funcSomaPeri()">
+                        <select name="tipoArmd" id="itipoArmd">
+                            <option value="0" selected>Nenhuma</option>
+                            <option value="1">Leve</option>
+                            <option value="2">Pesada</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="iescNome">Escudo: </label> &nbsp; &nbsp;
+                        <input type="text" name="escNome" id="iescNome">
+                        <input type="number" name="escDef" id="iescDef" value="0" min="0"
+                            oninput="iescBonus.innerHTML=iescDef.value">
+                        <input type="number" name="penEsc" id="ipenEsc" value="0" max="0" oninput="funcSomaPeri()">
+                    </p>
+                </form>
             </div>
 
         </div>
         <br>
-        <!-- EXP e Deslocamento -->
+        <!-- EXP, Tamanho e Deslocamento -->
         <div class="row">
             <div class="col-3">
-                <label for="exp">EXPERIÊNCIA</label>
+                <label for="iexp">EXPERIÊNCIA</label>
                 <input type="number" name="exp" id="iexp" min="0" value="0">
             </div>
             <div class="col-2">
-                <label for="tamanho">TAMANHO</label>
+                <label for="itamanho">TAMANHO</label>
                 <select name="tamanho" id="itamanho">
                     <option value="pequeno">Pequeno (+2/-2)</option>
                     <option value="medio" selected>Médio (0/0)</option>
@@ -184,8 +300,8 @@
                 </select>
             </div>
             <div class="col-2">
-                <label for="deslocamento">DESLOCAMENTO</label>
-                <input type="number" name="deslocamento" id="ideslocamento" min="0" value="9"> metros
+                <label for="ideslocamento">DESLOCAMENTO</label>
+                <input type="number" name="deslocamento" id="ideslocamento" min="0" value="9" step="1.5"> metros
             </div>
         </div>
         <br>
