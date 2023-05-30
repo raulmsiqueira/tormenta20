@@ -124,72 +124,171 @@
             <!-- div das Perícias -->
             <div class="col align-self-end border border-danger-subtle">
                 <form name="formPeri" id="iformPeri" method="get" oninput="funcSomaPeri()">
-                    <p>PERÍCIAS: Total = Nv + Atr + Treino + Outros</p>
-
-                    <input type="checkbox" name="cbAcro" id="icbAcro" value="0"
-                        oninput="itrAcro.innerHTML = funcTreino(icbAcro.checked)">
-                    <label for="iperiAcro">Acrobacia</label> &nbsp;
-                    <output name="periAcro" id="iperiAcro">0</output> &nbsp; = &nbsp;
-                    <output name="mNvAcrob" id="imNvAcrob">0</output> &nbsp; + &nbsp;
-                    <output name="modDesAcro" id="imodDesAcro">0</output> &nbsp; + &nbsp;
-                    <output name="trAcro" id="itrAcro">0</output> &nbsp; + &nbsp;
-                    <input type="number" name="bonusAcro" id="ibonusAcro" value="0">
-                    <br>
-
-                    <input type="checkbox" name="cbAtle" id="icbAtle" value="0"
-                        oninput="itrAtle.innerHTML = funcTreino(icbAtle.checked)">
-                    <label for="iperiAtle">Atletismo</label> &nbsp;
-                    <output name="periAtle" id="iperiAtle">0</output> &nbsp; = &nbsp;
-                    <output name="mNvAtle" id="imNvAtle">0</output> &nbsp; + &nbsp;
-                    <output name="modForAtle" id="imodForAtle">0</output> &nbsp; + &nbsp;
-                    <output name="trAtle" id="itrAtle">0</output> &nbsp; + &nbsp;
-                    <input type="number" name="bonusAtle" id="ibonusAtle" value="0">
-                    <br>
-
-                    <input type="checkbox" name="cbAtua" id="icbAtua" value="0"
-                        oninput="itrAtua.innerHTML = funcTreino(icbAtua.checked)">
-                    <label for="iperiAtua">Atuação</label> &nbsp;
-                    <output name="periAtua" id="iperiAtua">0</output> &nbsp; = &nbsp;
-                    <output name="mNvAtua" id="imNvAtua">0</output> &nbsp; + &nbsp;
-                    <output name="modCarAtua" id="imodCarAtua">0</output> &nbsp; + &nbsp;
-                    <output name="trAtua" id="itrAtua">0</output> &nbsp; + &nbsp;
-                    <input type="number" name="bonusAtua" id="ibonusAtua" value="0">
-                    <br>
-
-                    <input type="checkbox" name="cbConh" id="icbConh" value="0"
-                        oninput="itrConh.innerHTML = funcTreino(icbConh.checked)">
-                    <label for="iperiConh">Conhecimento</label> &nbsp;
-                    <output name="periConh" id="iperiConh">0</output> &nbsp; = &nbsp;
-                    <output name="mNvConh" id="imNvConh">0</output> &nbsp; + &nbsp;
-                    <output name="modIntConh" id="imodIntConh">0</output> &nbsp; + &nbsp;
-                    <output name="trConh" id="itrConh">0</output> &nbsp; + &nbsp;
-                    <input type="number" name="bonusConh" id="ibonusConh" value="0">
-                    <br>
-
-                    <input type="checkbox" name="cbCura" id="icbCura" value="0"
-                        oninput="itrCura.innerHTML = funcTreino(icbCura.checked)">
-                    <label for="iperiCura">Cura</label> &nbsp;
-                    <output name="periCura" id="iperiCura">0</output> &nbsp; = &nbsp;
-                    <output name="mNvCura" id="imNvCura">0</output> &nbsp; + &nbsp;
-                    <output name="modSabCura" id="imodSabCura">0</output> &nbsp; + &nbsp;
-                    <output name="trCura" id="itrCura">0</output> &nbsp; + &nbsp;
-                    <input type="number" name="bonusCura" id="ibonusCura" value="0">
-                    <br>
-
-                    <input type="checkbox" name="cbFort" id="icbFort" value="0"
-                        oninput="itrFort.innerHTML = funcTreino(icbFort.checked)">
-                    <label for="iperiFort">Fortitude</label> &nbsp;
-                    <output name="periFort" id="iperiFort">0</output> &nbsp; = &nbsp;
-                    <output name="mNvFort" id="imNvFort">0</output> &nbsp; + &nbsp;
-                    <output name="modConFort" id="imodConFort">0</output> &nbsp; + &nbsp;
-                    <output name="trFort" id="itrFort">0</output> &nbsp; + &nbsp;
-                    <input type="number" name="bonusFort" id="ibonusFort" value="0">
-                    <br>
-
+                    <table class="table table-sm text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">PERÍCIAS</th>
+                                <td>Total</td>
+                                <td>=</td>
+                                <td>1/2 Nv</td>
+                                <td>+</td>
+                                <td>Atrib.</td>
+                                <td>+</td>
+                                <td>Treino</td>
+                                <td>+</td>
+                                <td>Outros</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-start">
+                                    <input type="checkbox" name="cbAcro" id="icbAcro" value="0"
+                                        oninput="itrAcro.innerHTML = funcTreino(icbAcro.checked)">
+                                    <label for="iperiAcro, icbAcro">Acrobacia</label>
+                                </th>
+                                <td>
+                                    <output name="periAcro" id="iperiAcro">0</output>
+                                </td>
+                                <td>=</td>
+                                <td>
+                                    <output name="mNvAcrob" id="imNvAcrob">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="modDesAcro" id="imodDesAcro">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="trAcro" id="itrAcro">0</output>
+                                </td>
+                                <td>+</td>
+                                <td><input type="number" name="bonusAcro" id="ibonusAcro" value="0"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-start">
+                                    <input type="checkbox" name="cbAtle" id="icbAtle" value="0"
+                                        oninput="itrAtle.innerHTML = funcTreino(icbAtle.checked)">
+                                    <label for="iperiAtle">Atletismo</label>
+                                </th>
+                                <td>
+                                    <output name="periAtle" id="iperiAtle">0</output>
+                                </td>
+                                <td>=</td>
+                                <td>
+                                    <output name="mNvAtle" id="imNvAtle">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="modForAtle" id="imodForAtle">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="trAtle" id="itrAtle">0</output>
+                                </td>
+                                <td>+</td>
+                                <td><input type="number" name="bonusAtle" id="ibonusAtle" value="0"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-start">
+                                    <input type="checkbox" name="cbAtua" id="icbAtua" value="0"
+                                        oninput="itrAtua.innerHTML = funcTreino(icbAtua.checked)">
+                                    <label for="iperiAtua">Atuação</label>
+                                </th>
+                                <td>
+                                    <output name="periAtua" id="iperiAtua">0</output>
+                                </td>
+                                <td>=</td>
+                                <td>
+                                    <output name="mNvAtua" id="imNvAtua">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="modCarAtua" id="imodCarAtua">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="trAtua" id="itrAtua">0</output>
+                                </td>
+                                <td>+</td>
+                                <td><input type="number" name="bonusAtua" id="ibonusAtua" value="0"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-start">
+                                    <input type="checkbox" name="cbConh" id="icbConh" value="0"
+                                        oninput="itrConh.innerHTML = funcTreino(icbConh.checked)">
+                                    <label for="iperiConh">Conhecimento</label>
+                                </th>
+                                <td>
+                                    <output name="periConh" id="iperiConh">0</output>
+                                </td>
+                                <td>=</td>
+                                <td>
+                                    <output name="mNvConh" id="imNvConh">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="modIntConh" id="imodIntConh">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="trConh" id="itrConh">0</output>
+                                </td>
+                                <td>+</td>
+                                <td><input type="number" name="bonusConh" id="ibonusConh" value="0"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-start">
+                                    <input type="checkbox" name="cbCura" id="icbCura" value="0"
+                                        oninput="itrCura.innerHTML = funcTreino(icbCura.checked)">
+                                    <label for="iperiCura">Cura</label>
+                                </th>
+                                <td>
+                                    <output name="periCura" id="iperiCura">0</output>
+                                </td>
+                                <td>=</td>
+                                <td>
+                                    <output name="mNvCura" id="imNvCura">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="modSabCura" id="imodSabCura">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="trCura" id="itrCura">0</output>
+                                </td>
+                                <td>+</td>
+                                <td><input type="number" name="bonusCura" id="ibonusCura" value="0"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-start">
+                                    <input type="checkbox" name="cbFort" id="icbFort" value="0"
+                                        oninput="itrFort.innerHTML = funcTreino(icbFort.checked)">
+                                    <label for="iperiFort">Fortitude</label>
+                                </th>
+                                <td>
+                                    <output name="periFort" id="iperiFort">0</output>
+                                </td>
+                                <td>=</td>
+                                <td>
+                                    <output name="mNvFort" id="imNvFort">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="modConFort" id="imodConFort">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="trFort" id="itrFort">0</output>
+                                </td>
+                                <td>+</td>
+                                <td><input type="number" name="bonusFort" id="ibonusFort" value="0"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </form>
             </div>
         </div>
-
         <!-- div Pontos de Vida e Mana -->
         <div class="row">
             <div class="col-3">
