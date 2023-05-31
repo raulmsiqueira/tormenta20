@@ -14,211 +14,251 @@
 </head>
 
 <body>
-    <h1>TORMENTA20 - Ficha de Personagem</h1>
+    <h1 class="text-center">TORMENTA20 - Ficha Dinâmica</h1>
+    <br>
     <div class="container">
         <div class="row">
+            <div class="col-6">
+                <label for="ipersonagem">Personagem</label>
+                <input type="text" name="personagem" id="ipersonagem">
+            </div>
+            <div class="col-6">
+                <label for="ijogador">Jogador(a)</label>
+                <input type="text" name="jogador" id="ijogador">
+            </div>
+        </div>
+        <br>
+        <div class="row">
             <div class="col">
-                <form name="formCabecalho" id="iformCabecalho" action="#" method="get">
-                    <fieldset>
-                        <legend>Cabeçalho da Ficha</legend>
-                        <div>
-                            <label for="ipersonagem">Personagem</label>
-                            <input type="text" name="personagem" id="ipersonagem">
-                            <label for="ijogador">Jogador(a)</label>
-                            <input type="text" name="jogador" id="ijogador">
-                        </div>
-                        <br>
-                        <div>
-                            <label for="iraca">Raça</label>
-                            <input type="text" name="raca" id="iraca">
-                            <label for="iorigem">Origem</label>
-                            <input type="text" name="origem" id="iorigem">
-                            <label for="iclasseP">Classe</label>
-                            <input type="text" name="classeP" id="iclasseP">
-                            <label for="inivel">Nível</label>
-                            <select name="nivel" id="inivel" oninput="funcNivel()">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                            </select>
-                            <label for="idivindade">Divindade</label>
-                            <input type="text" name="divindade" id="idivindade">
-                        </div>
-                    </fieldset>
+                <form name="formCabecalho" id="iformCabecalho" method="get"></form>
+                <label for="iraca">Raça</label>
+                <input type="text" name="raca" id="iraca">
+                <label for="iorigem">Origem</label>
+                <input type="text" name="origem" id="iorigem">
+                <label for="iclassePrsn">Classe</label>
+                <select name="classePrsn" id="iclassePrsn" oninput="funcClasse()">
+                    <option value="1" selected>Arcanista</option>
+                    <option value="2">Bárbaro</option>
+                    <option value="3">Bardo</option>
+                    <option value="4">Bucaneiro</option>
+                    <option value="5">Caçador</option>
+                    <option value="6">Cavaleiro</option>
+                    <option value="7">Clérigo</option>
+                    <option value="8">Druida</option>
+                    <option value="9">Guerreiro</option>
+                    <option value="10">Inventor</option>
+                    <option value="11">Ladino</option>
+                    <option value="12">Lutador</option>
+                    <option value="13">Nobre</option>
+                    <option value="14">Paladino</option>
+                </select>
+                <label for="inivel">Nível</label>
+                <select name="nivel" id="inivel" oninput="funcNivel()">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                </select>
+                <label for="idivindade">Divindade</label>
+                <input type="text" name="divindade" id="idivindade">
                 </form>
             </div>
         </div>
         <br>
         <div class="row">
-
             <div class="col-6">
                 <!-- formulário de Atributos -->
                 <form method="get" name="formAtr" id="iformAtr">
-                    <table>
-                        <tr class="text-center">
-                            <td>
-                                <label for="iatFor">FOR</label>
-                            </td>
-                            <td>
-                                <label for="iatDes">DES</label>
-                            </td>
-                            <td>
-                                <label for="iatCon">CON</label>
-                            </td>
-                            <td>
-                                <label for="iatInt">INT</label>
-                            </td>
-                            <td>
-                                <label for="iatSab">SAB</label>
-                            </td>
-                            <td>
-                                <label for="iatCar">CAR</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="number" name="atFor" id="iatFor" min="-5" value="0"
-                                    oninput="funcBonusFor()">
-                            </td>
-                            <td>
-                                <input type="number" name="atDes" id="iatDes" min="-5" value="0"
-                                    oninput="funcBonusDes()" onclick="funcDef()">
-                            </td>
-                            <td>
-                                <input type="number" name="atCon" id="iatCon" min="-5" value="0"
-                                    oninput="funcBonusCon()">
-                            </td>
-                            <td>
-                                <input type="number" name="atInt" id="iatInt" min="-5" value="0"
-                                    oninput="funcBonusInt()">
-                            </td>
-                            <td>
-                                <input type="number" name="atSab" id="iatSab" min="-5" value="0"
-                                    oninput="funcBonusSab()">
-                            </td>
-                            <td>
-                                <input type="number" name="atCar" id="iatCar" min="-5" value="0"
-                                    oninput="funcBonusCar()">
-                            </td>
-                        </tr>
+                    <table class="table table-striped-columns text-center">
+                        <thead>
+                            <tr class="fs-4">
+                                <th scope="col">
+                                    <label for="iatFor" data-toggle="tooltip" title="Força">FOR</label>
+                                </th>
+                                <th scope="col">
+                                    <label for="iatDes" data-toggle="tooltip" title="Destreza">DES</label>
+                                </th>
+                                <th scope="col">
+                                    <label for="iatCon" data-toggle="tooltip" title="Constituição">CON</label>
+                                </th>
+                                <th scope="col">
+                                    <label for="iatInt" data-toggle="tooltip" title="Inteligência">INT</label>
+                                </th>
+                                <th scope="col">
+                                    <label for="iatSab" data-toggle="tooltip" title="Sabedoria">SAB</label>
+                                </th>
+                                <th scope="col">
+                                    <label for="iatCar" data-toggle="tooltip" title="Carisma">CAR</label>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="number" name="atFor" id="iatFor" min="-5" value="0"
+                                        oninput="funcBonusFor()">
+                                </td>
+                                <td>
+                                    <input type="number" name="atDes" id="iatDes" min="-5" value="0"
+                                        oninput="funcBonusDes()" onclick="funcDef()">
+                                </td>
+                                <td>
+                                    <input type="number" name="atCon" id="iatCon" min="-5" value="0"
+                                        oninput="funcBonusCon()">
+                                </td>
+                                <td>
+                                    <input type="number" name="atInt" id="iatInt" min="-5" value="0"
+                                        oninput="funcBonusInt()">
+                                </td>
+                                <td>
+                                    <input type="number" name="atSab" id="iatSab" min="-5" value="0"
+                                        oninput="funcBonusSab()">
+                                </td>
+                                <td>
+                                    <input type="number" name="atCar" id="iatCar" min="-5" value="0"
+                                        oninput="funcBonusCar()">
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </form>
+                <br>
                 <!-- Pontos de Vida e Mana -->
-                <p>PONTOS DE VIDA & PONTOS DE MANA</p>
-                <!-- div Lista de Ataques & Armas -->
                 <div>
-                    <label for="iataques">ATAQUES</label>
-                    <br>
-                    <input type="text" name="ataque1" id="iataque1">
-                    <br>
-                    <input type="text" name="ataque2" id="iataque2">
-                    <br>
-                    <input type="text" name="ataque3" id="iataque3">
-                    <br>
-                    <input type="text" name="ataque4" id="iataque4">
-                    <br>
-                    <input type="text" name="ataque5" id="iataque5">
+                    <table class="table table-striped-columns text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="fs-5"><label for="ipvMax">PV</label></th>
+                                <th scope="col">PONTOS DE VIDA</th>
+                                <th scope="col" class="fs-5"><label for="ipmMax">PM</label></th>
+                                <th scope="col">PONTOS DE MANA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><output name="pvMax" id="ipvMax">8</output></td>
+                                <td><input type="text" name="pvAtual" id="ipvAtual"></td>
+                                <td><output name="pmMax" id="ipmMax">6</output></td>
+                                <td><input type="text" name="pmAtual" id="ipmAtual"></td>
+                            </tr>
+                            <tr>
+                                <td>Máx.</td>
+                                <td>Atuais</td>
+                                <td>Máx.</td>
+                                <td>Atuais</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
                 </div>
-                <!-- Defesa e Proeficiências -->
+                <!-- Lista de Ataques & Armas -->
+                <br>
+                <!-- Defesa -->
                 <div>
                     <form name="formDef" id="iformDef" method="get" oninput="funcDef()">
-                        <p>
-                            <label for="idefesa">DEFESA</label>=
-                            <label for="idesDef">DES</label>+
-                            <label for="iarmdDef">Armadura</label>+
-                            <label for="iescDef">Escudo</label>+
-                            <label for="ioutrDef">Outros</label>
-                        </p>
-                        <p>
-                            &nbsp; &nbsp;
-                            <output name="defesa" id="idefesa">10</output> = 10 +
-                            &nbsp;
-                            <output name="desDef" id="idesDef">0</output> &nbsp; &nbsp; +
-                            &nbsp; &nbsp;
-                            <output name="armdBonus" id="iarmdBonus">0</output> &nbsp; &nbsp; +
-                            &nbsp; &nbsp;
-                            <output name="escBonus" id="iescBonus">0</output> &nbsp; &nbsp; +
-                            &nbsp; &nbsp;
-                            <input type="number" name="outrDef" id="ioutrDef" value="0">
-                        </p>
+                        <table class="table table-striped-columns text-center">
+                            <tr>
+                                <th><label for="idefesa">DEFESA</label></th>
+                                <td>=10+</td>
+                                <td><label for="idesDef">DES</label></td>
+                                <td>+</td>
+                                <td><label for="iarmdDef">Armadura</label></td>
+                                <td>+</td>
+                                <td><label for="iescDef">Escudo</label></td>
+                                <td>+</td>
+                                <td><label for="ioutrDef">Outros</label></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <output name="defesa" id="idefesa">10</output>
+                                </td>
+                                <td>=10+</td>
+                                <td>
+                                    <output name="desDef" id="idesDef">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="armdBonus" id="iarmdBonus">0</output>
+                                </td>
+                                <td>+</td>
+                                <td>
+                                    <output name="escBonus" id="iescBonus">0</output>
+                                </td>
+                                <td>+</td>
+                                <td><input type="number" name="outrDef" id="ioutrDef" value="0"></td>
+                            </tr>
+                        </table>
                     </form>
                 </div>
-                <div>
-                    <label for="iproficiencia">PROFICIÊNCIAS</label>
-                    <br>
-                    <textarea rows="4" cols="42" name="proficiencia" id="iproficiencia"></textarea>
-                </div>
+                <!-- Proficiências-->
+                <br>
                 <!-- Armadura & Escudo -->
                 <div>
                     <form name="formArmdEsc" id="iformArmdEsc" method="get" oninput="funcDef()">
-                        <p>
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            &nbsp;
-                            Defesa | Penal. | Tipo
-                        </p>
-                        <p>
-                            <label for="iarmdNome">Armadura:</label>
-                            <input type="text" name="armdNome" id="iarmdNome">
-                            <input type="number" name="armdDef" id="iarmdDef" value="0" min="0"
-                                oninput="iarmdBonus.innerHTML=iarmdDef.value">
-                            <input type="number" name="penArmd" id="ipenArmd" value="0" max="0"
-                                oninput="funcSomaPeri()">
-                            <select name="tipoArmd" id="itipoArmd">
-                                <option value="0" selected>Nenhuma</option>
-                                <option value="1">Leve</option>
-                                <option value="2">Pesada</option>
-                            </select>
-                        </p>
-                        <p>
-                            <label for="iescNome">Escudo: </label> &nbsp; &nbsp;
-                            <input type="text" name="escNome" id="iescNome">
-                            <input type="number" name="escDef" id="iescDef" value="0" min="0"
-                                oninput="iescBonus.innerHTML=iescDef.value">
-                            <input type="number" name="penEsc" id="ipenEsc" value="0" max="0" oninput="funcSomaPeri()">
-                        </p>
+                        <table class="table table-striped-columns">
+                            <tr class="text-center">
+                                <th colspan="2">ARMADURA & ESCUDO</th>
+                                <td>Defesa</td>
+                                <td>Penal.</td>
+                                <td>Tipo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-end"><label for="iarmdNome">Armadura:</label></th>
+                                <td><input type="text" name="armdNome" id="iarmdNome"></td>
+                                <td>
+                                    <input type="number" name="armdDef" id="iarmdDef" value="0" min="0"
+                                        oninput="iarmdBonus.innerHTML=iarmdDef.value">
+                                </td>
+                                <td>
+                                    <input type="number" name="penArmd" id="ipenArmd" value="0" max="0"
+                                        oninput="funcSomaPeri()">
+                                </td>
+                                <td>
+                                    <select name="tipoArmd" id="itipoArmd">
+                                        <option value="0" selected>Nenhuma</option>
+                                        <option value="1">Leve</option>
+                                        <option value="2">Pesada</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-end"><label for="iescNome">Escudo: </label></th>
+                                <td><input type="text" name="escNome" id="iescNome"></td>
+                                <td>
+                                    <input type="number" name="escDef" id="iescDef" value="0" min="0"
+                                        oninput="iescBonus.innerHTML=iescDef.value">
+                                </td>
+                                <td><input type="number" name="penEsc" id="ipenEsc" value="0" max="0"
+                                        oninput="funcSomaPeri()"></td>
+                                <td></td>
+                            </tr>
+                        </table>
                     </form>
                 </div>
+
                 <!-- EXP, Tamanho e Deslocamento -->
-                <div>
-                    <label for="iexp">EXPERIÊNCIA</label>
-                    <input type="number" name="exp" id="iexp" min="0" value="0">
-                </div>
-                <div>
-                    <label for="itamanho">TAMANHO</label>
-                    <select name="tamanho" id="itamanho">
-                        <option value="pequeno">Pequeno (+2/-2)</option>
-                        <option value="medio" selected>Médio (0/0)</option>
-                        <option value="grande">Grande (-2/+2)</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="ideslocamento">DESLOCAMENTO</label>
-                    <input type="number" name="deslocamento" id="ideslocamento" min="0" value="9" step="1.5"> metros
-                </div>
+
             </div>
             <!-- div das Perícias -->
-            <div class="col-6 align-self-end border border-danger-subtle">
+            <div class="col-6 align-self-end">
                 <form name="formPeri" id="iformPeri" method="get" oninput="funcSomaPeri()">
-                    <table class="table table-sm text-center">
+                    <table class="table table-sm table-striped-columns text-center">
                         <thead>
                             <tr>
                                 <th scope="col">PERÍCIAS</th>
@@ -236,9 +276,11 @@
                         <tbody>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbAcro" id="icbAcro" value="0"
+                                    <input type="checkbox" name="cbAcro" id="icbAcro" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrAcro.innerHTML = funcTreino(icbAcro.checked)">
-                                    <label for="iperiAcro, icbAcro">Acrobacia</label>
+                                    <label for="iperiAcro, icbAcro" data-toggle="tooltip"
+                                        title="Penalidade de armadura">Acrobacia#</label>
                                 </th>
                                 <td>
                                     <output name="periAcro" id="iperiAcro">0</output>
@@ -249,7 +291,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modDesAcro" id="imodDesAcro">0</output>
+                                    <output name="modDesAcro" id="imodDesAcro" data-toggle="tooltip"
+                                        title="Destreza">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -260,12 +303,14 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbAdes" id="icbAdes" value="0"
+                                    <input type="checkbox" name="cbAdes" id="icbAdes" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrAdes.innerHTML = funcTreino(icbAdes.checked)">
-                                    <label for="iperiAdes, icbAdes">Adestramento</label>
+                                    <label for="iperiAdes, icbAdes" data-toggle="tooltip"
+                                        title="Somente treinado">Adestramento*</label>
                                 </th>
                                 <td>
-                                    <output name="periAdes" id="iperiAdes">0</output>
+                                    <output name="periAdes" id="iperiAdes"></output>
                                 </td>
                                 <td>=</td>
                                 <td>
@@ -273,7 +318,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modCarAdes" id="imodCarAdes">0</output>
+                                    <output name="modCarAdes" id="imodCarAdes" data-toggle="tooltip"
+                                        title="Carisma">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -284,7 +330,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbAtle" id="icbAtle" value="0"
+                                    <input type="checkbox" name="cbAtle" id="icbAtle" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrAtle.innerHTML = funcTreino(icbAtle.checked)">
                                     <label for="iperiAtle">Atletismo</label>
                                 </th>
@@ -297,7 +344,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modForAtle" id="imodForAtle">0</output>
+                                    <output name="modForAtle" id="imodForAtle" data-toggle="tooltip"
+                                        title="Força">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -308,12 +356,14 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbAtua" id="icbAtua" value="0"
+                                    <input type="checkbox" name="cbAtua" id="icbAtua" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrAtua.innerHTML = funcTreino(icbAtua.checked)">
-                                    <label for="iperiAtua">Atuação</label>
+                                    <label for="iperiAtua" data-toggle="tooltip"
+                                        title="Somente treinado">Atuação*</label>
                                 </th>
                                 <td>
-                                    <output name="periAtua" id="iperiAtua">0</output>
+                                    <output name="periAtua" id="iperiAtua"></output>
                                 </td>
                                 <td>=</td>
                                 <td>
@@ -321,7 +371,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modCarAtua" id="imodCarAtua">0</output>
+                                    <output name="modCarAtua" id="imodCarAtua" data-toggle="tooltip"
+                                        title="Carisma">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -332,7 +383,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbCava" id="icbCava" value="0"
+                                    <input type="checkbox" name="cbCava" id="icbCava" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrCava.innerHTML = funcTreino(icbCava.checked)">
                                     <label for="iperiCava, icbCava">Cavalgar</label>
                                 </th>
@@ -345,7 +397,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modDesCava" id="imodDesCava">0</output>
+                                    <output name="modDesCava" id="imodDesCava" data-toggle="tooltip"
+                                        title="Destreza">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -356,12 +409,14 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbConh" id="icbConh" value="0"
+                                    <input type="checkbox" name="cbConh" id="icbConh" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrConh.innerHTML = funcTreino(icbConh.checked)">
-                                    <label for="iperiConh">Conhecimento</label>
+                                    <label for="iperiConh" data-toggle="tooltip"
+                                        title="Somente treinado">Conhecimento*</label>
                                 </th>
                                 <td>
-                                    <output name="periConh" id="iperiConh">0</output>
+                                    <output name="periConh" id="iperiConh"></output>
                                 </td>
                                 <td>=</td>
                                 <td>
@@ -369,7 +424,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modIntConh" id="imodIntConh">0</output>
+                                    <output name="modIntConh" id="imodIntConh" data-toggle="tooltip"
+                                        title="Inteligência">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -380,7 +436,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbCura" id="icbCura" value="0"
+                                    <input type="checkbox" name="cbCura" id="icbCura" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrCura.innerHTML = funcTreino(icbCura.checked)">
                                     <label for="iperiCura">Cura</label>
                                 </th>
@@ -393,7 +450,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modSabCura" id="imodSabCura">0</output>
+                                    <output name="modSabCura" id="imodSabCura" data-toggle="tooltip"
+                                        title="Sabedoria">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -404,7 +462,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbDipl" id="icbDipl" value="0"
+                                    <input type="checkbox" name="cbDipl" id="icbDipl" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrDipl.innerHTML = funcTreino(icbDipl.checked)">
                                     <label for="iperiDipl, icbDipl">Diplomacia</label>
                                 </th>
@@ -417,7 +476,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modCarDipl" id="imodCarDipl">0</output>
+                                    <output name="modCarDipl" id="imodCarDipl" data-toggle="tooltip"
+                                        title="Carisma">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -428,7 +488,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbEnga" id="icbEnga" value="0"
+                                    <input type="checkbox" name="cbEnga" id="icbEnga" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrEnga.innerHTML = funcTreino(icbEnga.checked)">
                                     <label for="iperiEnga, icbEnga">Enganação</label>
                                 </th>
@@ -441,7 +502,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modCarEnga" id="imodCarEnga">0</output>
+                                    <output name="modCarEnga" id="imodCarEnga" data-toggle="tooltip"
+                                        title="Carisma">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -452,7 +514,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbFort" id="icbFort" value="0"
+                                    <input type="checkbox" name="cbFort" id="icbFort" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrFort.innerHTML = funcTreino(icbFort.checked)">
                                     <label for="iperiFort">Fortitude</label>
                                 </th>
@@ -465,7 +528,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modConFort" id="imodConFort">0</output>
+                                    <output name="modConFort" id="imodConFort" data-toggle="tooltip"
+                                        title="Constituição">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -476,9 +540,11 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbFurt" id="icbFurt" value="0"
+                                    <input type="checkbox" name="cbFurt" id="icbFurt" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrFurt.innerHTML = funcTreino(icbFurt.checked)">
-                                    <label for="iperiFurt, icbFurt">Furtividade</label>
+                                    <label for="iperiFurt, icbFurt" data-toggle="tooltip"
+                                        title="Penalidade de armadura">Furtividade#</label>
                                 </th>
                                 <td>
                                     <output name="periFurt" id="iperiFurt">0</output>
@@ -489,7 +555,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modDesFurt" id="imodDesFurt">0</output>
+                                    <output name="modDesFurt" id="imodDesFurt" data-toggle="tooltip"
+                                        title="Destreza">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -500,12 +567,14 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbGuer" id="icbGuer" value="0"
+                                    <input type="checkbox" name="cbGuer" id="icbGuer" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrGuer.innerHTML = funcTreino(icbGuer.checked)">
-                                    <label for="iperiGuer">Guerra</label>
+                                    <label for="iperiGuer" data-toggle="tooltip"
+                                        title="Somente treinado">Guerra*</label>
                                 </th>
                                 <td>
-                                    <output name="periGuer" id="iperiGuer">0</output>
+                                    <output name="periGuer" id="iperiGuer"></output>
                                 </td>
                                 <td>=</td>
                                 <td>
@@ -513,7 +582,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modIntGuer" id="imodIntGuer">0</output>
+                                    <output name="modIntGuer" id="imodIntGuer" data-toggle="tooltip"
+                                        title="Inteligência">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -524,7 +594,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbInic" id="icbInic" value="0"
+                                    <input type="checkbox" name="cbInic" id="icbInic" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrInic.innerHTML = funcTreino(icbInic.checked)">
                                     <label for="iperiInic, icbInic">Iniciativa</label>
                                 </th>
@@ -537,7 +608,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modDesInic" id="imodDesInic">0</output>
+                                    <output name="modDesInic" id="imodDesInic" data-toggle="tooltip"
+                                        title="Destreza">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -548,7 +620,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbInti" id="icbInti" value="0"
+                                    <input type="checkbox" name="cbInti" id="icbInti" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrInti.innerHTML = funcTreino(icbInti.checked)">
                                     <label for="iperiInti">Intimidação</label>
                                 </th>
@@ -561,7 +634,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modCarInti" id="imodCarInti">0</output>
+                                    <output name="modCarInti" id="imodCarInti" data-toggle="tooltip"
+                                        title="Carisma">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -572,7 +646,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbIntu" id="icbIntu" value="0"
+                                    <input type="checkbox" name="cbIntu" id="icbIntu" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrIntu.innerHTML = funcTreino(icbIntu.checked)">
                                     <label for="iperiIntu">Intuição</label>
                                 </th>
@@ -585,7 +660,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modSabIntu" id="imodSabIntu">0</output>
+                                    <output name="modSabIntu" id="imodSabIntu" data-toggle="tooltip"
+                                        title="Sabedoria">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -596,7 +672,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbInve" id="icbInve" value="0"
+                                    <input type="checkbox" name="cbInve" id="icbInve" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrInve.innerHTML = funcTreino(icbInve.checked)">
                                     <label for="iperiInve">Investigação</label>
                                 </th>
@@ -609,7 +686,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modIntInve" id="imodIntInve">0</output>
+                                    <output name="modIntInve" id="imodIntInve" data-toggle="tooltip"
+                                        title="Inteligência">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -620,12 +698,14 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbJoga" id="icbJoga" value="0"
+                                    <input type="checkbox" name="cbJoga" id="icbJoga" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrJoga.innerHTML = funcTreino(icbJoga.checked)">
-                                    <label for="iperiJoga">Jogatina</label>
+                                    <label for="iperiJoga" data-toggle="tooltip"
+                                        title="Somente treinado">Jogatina*</label>
                                 </th>
                                 <td>
-                                    <output name="periJoga" id="iperiJoga">0</output>
+                                    <output name="periJoga" id="iperiJoga"></output>
                                 </td>
                                 <td>=</td>
                                 <td>
@@ -633,7 +713,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modCarJoga" id="imodCarJoga">0</output>
+                                    <output name="modCarJoga" id="imodCarJoga" data-toggle="tooltip"
+                                        title="Carisma">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -644,12 +725,14 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbLadi" id="icbLadi" value="0"
+                                    <input type="checkbox" name="cbLadi" id="icbLadi" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrLadi.innerHTML = funcTreino(icbLadi.checked)">
-                                    <label for="iperiLadi">Ladinagem</label>
+                                    <label for="iperiLadi" data-toggle="tooltip"
+                                        title="Somente treinado e penalidade de armadura">Ladinagem*#</label>
                                 </th>
                                 <td>
-                                    <output name="periLadi" id="iperiLadi">0</output>
+                                    <output name="periLadi" id="iperiLadi"></output>
                                 </td>
                                 <td>=</td>
                                 <td>
@@ -657,7 +740,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modDesLadi" id="imodDesLadi">0</output>
+                                    <output name="modDesLadi" id="imodDesLadi" data-toggle="tooltip"
+                                        title="Destreza">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -668,7 +752,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbLuta" id="icbLuta" value="0"
+                                    <input type="checkbox" name="cbLuta" id="icbLuta" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrLuta.innerHTML = funcTreino(icbLuta.checked)">
                                     <label for="iperiLuta">Luta</label>
                                 </th>
@@ -681,7 +766,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modForLuta" id="imodForLuta">0</output>
+                                    <output name="modForLuta" id="imodForLuta" data-toggle="tooltip"
+                                        title="Força">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -692,12 +778,14 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbMist" id="icbMist" value="0"
+                                    <input type="checkbox" name="cbMist" id="icbMist" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrMist.innerHTML = funcTreino(icbMist.checked)">
-                                    <label for="iperiMist">Misticismo</label>
+                                    <label for="iperiMist" data-toggle="tooltip"
+                                        title="Somente treinado">Misticismo*</label>
                                 </th>
                                 <td>
-                                    <output name="periMist" id="iperiMist">0</output>
+                                    <output name="periMist" id="iperiMist"></output>
                                 </td>
                                 <td>=</td>
                                 <td>
@@ -705,7 +793,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modIntMist" id="imodIntMist">0</output>
+                                    <output name="modIntMist" id="imodIntMist" data-toggle="tooltip"
+                                        title="Inteligência">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -716,12 +805,14 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbNobr" id="icbNobr" value="0"
+                                    <input type="checkbox" name="cbNobr" id="icbNobr" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrNobr.innerHTML = funcTreino(icbNobr.checked)">
-                                    <label for="iperiNobr">Nobreza</label>
+                                    <label for="iperiNobr" data-toggle="tooltip"
+                                        title="Somente treinado">Nobreza*</label>
                                 </th>
                                 <td>
-                                    <output name="periNobr" id="iperiNobr">0</output>
+                                    <output name="periNobr" id="iperiNobr"></output>
                                 </td>
                                 <td>=</td>
                                 <td>
@@ -729,7 +820,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modIntNobr" id="imodIntNobr">0</output>
+                                    <output name="modIntNobr" id="imodIntNobr" data-toggle="tooltip"
+                                        title="Inteligência">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -740,12 +832,14 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbOfic" id="icbOfic" value="0"
+                                    <input type="checkbox" name="cbOfic" id="icbOfic" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrOfic.innerHTML = funcTreino(icbOfic.checked)">
-                                    <label for="iperiOfic">Ofício</label>
+                                    <label for="iperiOfic" data-toggle="tooltip"
+                                        title="Somente treinado">Ofício*</label>
                                 </th>
                                 <td>
-                                    <output name="periOfic" id="iperiOfic">0</output>
+                                    <output name="periOfic" id="iperiOfic"></output>
                                 </td>
                                 <td>=</td>
                                 <td>
@@ -753,7 +847,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modIntOfic" id="imodIntOfic">0</output>
+                                    <output name="modIntOfic" id="imodIntOfic" data-toggle="tooltip"
+                                        title="Inteligência">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -764,7 +859,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbPerc" id="icbPerc" value="0"
+                                    <input type="checkbox" name="cbPerc" id="icbPerc" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrPerc.innerHTML = funcTreino(icbPerc.checked)">
                                     <label for="iperiPerc">Percepção</label>
                                 </th>
@@ -777,7 +873,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modSabPerc" id="imodSabPerc">0</output>
+                                    <output name="modSabPerc" id="imodSabPerc" data-toggle="tooltip"
+                                        title="Sabedoria">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -788,12 +885,14 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbPilo" id="icbPilo" value="0"
+                                    <input type="checkbox" name="cbPilo" id="icbPilo" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrPilo.innerHTML = funcTreino(icbPilo.checked)">
-                                    <label for="iperiPilo">Pilotagem</label>
+                                    <label for="iperiPilo" data-toggle="tooltip"
+                                        title="Somente treinado">Pilotagem*</label>
                                 </th>
                                 <td>
-                                    <output name="periPilo" id="iperiPilo">0</output>
+                                    <output name="periPilo" id="iperiPilo"></output>
                                 </td>
                                 <td>=</td>
                                 <td>
@@ -801,7 +900,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modDesPilo" id="imodDesPilo">0</output>
+                                    <output name="modDesPilo" id="imodDesPilo" data-toggle="tooltip"
+                                        title="Destreza">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -812,7 +912,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbPont" id="icbPont" value="0"
+                                    <input type="checkbox" name="cbPont" id="icbPont" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrPont.innerHTML = funcTreino(icbPont.checked)">
                                     <label for="iperiPont">Pontaria</label>
                                 </th>
@@ -825,7 +926,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modDesPont" id="imodDesPont">0</output>
+                                    <output name="modDesPont" id="imodDesPont" data-toggle="tooltip"
+                                        title="Destreza">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -836,7 +938,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbRefl" id="icbRefl" value="0"
+                                    <input type="checkbox" name="cbRefl" id="icbRefl" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrRefl.innerHTML = funcTreino(icbRefl.checked)">
                                     <label for="iperiRefl">Reflexos</label>
                                 </th>
@@ -849,7 +952,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modDesRefl" id="imodDesRefl">0</output>
+                                    <output name="modDesRefl" id="imodDesRefl" data-toggle="tooltip"
+                                        title="Destreza">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -860,12 +964,14 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbReli" id="icbReli" value="0"
+                                    <input type="checkbox" name="cbReli" id="icbReli" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrReli.innerHTML = funcTreino(icbReli.checked)">
-                                    <label for="iperiReli">Religião</label>
+                                    <label for="iperiReli" data-toggle="tooltip"
+                                        title="Somente treinado">Religião*</label>
                                 </th>
                                 <td>
-                                    <output name="periReli" id="iperiReli">0</output>
+                                    <output name="periReli" id="iperiReli"></output>
                                 </td>
                                 <td>=</td>
                                 <td>
@@ -873,7 +979,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modSabReli" id="imodSabReli">0</output>
+                                    <output name="modSabReli" id="imodSabReli" data-toggle="tooltip"
+                                        title="Sabedoria">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -884,7 +991,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbSobr" id="icbSobr" value="0"
+                                    <input type="checkbox" name="cbSobr" id="icbSobr" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrSobr.innerHTML = funcTreino(icbSobr.checked)">
                                     <label for="iperiSobr">Sobrevivência</label>
                                 </th>
@@ -897,7 +1005,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modSabSobr" id="imodSabSobr">0</output>
+                                    <output name="modSabSobr" id="imodSabSobr" data-toggle="tooltip"
+                                        title="Sabedoria">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -908,7 +1017,8 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">
-                                    <input type="checkbox" name="cbVont" id="icbVont" value="0"
+                                    <input type="checkbox" name="cbVont" id="icbVont" value="0" data-toggle="tooltip"
+                                        title="Marque para treinar"
                                         oninput="itrVont.innerHTML = funcTreino(icbVont.checked)">
                                     <label for="iperiVont">Vontade</label>
                                 </th>
@@ -921,7 +1031,8 @@
                                 </td>
                                 <td>+</td>
                                 <td>
-                                    <output name="modSabVont" id="imodSabVont">0</output>
+                                    <output name="modSabVont" id="imodSabVont" data-toggle="tooltip"
+                                        title="Sabedoria">0</output>
                                 </td>
                                 <td>+</td>
                                 <td>
@@ -930,74 +1041,23 @@
                                 <td>+</td>
                                 <td><input type="number" name="bonusVont" id="ibonusVont" value="0"></td>
                             </tr>
-
                             <!-- colocar *Somente treinado e #Penalidade de armadura -->
-
+                            <tr>
+                                <td colspan="12"># Penalidade de armadura, * Somente treinado</td>
+                            </tr>
                         </tbody>
                     </table>
                 </form>
             </div>
         </div>
     </div>
+
     <!-- Equipamento e Tibares -->
-    <div class="col">
-        <form>
-            <fieldset>
-                <legend>EQUIPAMENTO</legend>
-                <input type="text" name="item1" id="iitem1">
-                <input type="number" name="peso1" id="ipeso1" min="0" value="0">
-                <input type="text" name="item2" id="iitem2">
-                <input type="number" name="peso2" id="ipeso2" min="0" value="0">
-                <br>
-                <input type="text" name="item3" id="iitem3">
-                <input type="number" name="peso3" id="ipeso3" min="0" value="0">
-                <input type="text" name="item4" id="iitem4">
-                <input type="number" name="peso4" id="ipeso4" min="0" value="0">
-                <br>
-                <input type="text" name="item5" id="iitem5">
-                <input type="number" name="peso5" id="ipeso5" min="0" value="0">
-                <input type="text" name="item6" id="iitem6">
-                <input type="number" name="peso6" id="ipeso6" min="0" value="0">
-                <br>
-                <input type="text" name="item7" id="iitem7">
-                <input type="number" name="peso7" id="ipeso7" min="0" value="0">
-                <input type="text" name="item8" id="iitem8">
-                <input type="number" name="peso8" id="ipeso8" min="0" value="0">
-                <br>
-                <input type="text" name="item9" id="iitem9">
-                <input type="number" name="peso9" id="ipeso9" min="0" value="0">
-                <input type="text" name="item10" id="iitem10">
-                <input type="number" name="peso10" id="ipeso10" min="0" value="0">
-                <br>
-                <input type="text" name="item11" id="iitem11">
-                <input type="number" name="peso11" id="ipeso11" min="0" value="0">
-                <input type="text" name="item12" id="iitem12">
-                <input type="number" name="peso12" id="ipeso12" min="0" value="0">
-                <br>
-                <input type="text" name="item13" id="iitem13">
-                <input type="number" name="peso13" id="ipeso13" min="0" value="0">
-                <input type="text" name="item14" id="iitem14">
-                <input type="number" name="peso14" id="ipeso14" min="0" value="0">
-                <br>
-                <input type="text" name="item15" id="iitem15">
-                <input type="number" name="peso15" id="ipeso15" min="0" value="0">
-                <label for="pesoTotal">Peso Total</label>
-                <output name="pesoTotal"></output>
-                <br>
-                <input type="text" name="item16" id="iitem16">
-                <input type="number" name="peso16" id="ipeso16" min="0" value="0">
-                <input type="number" name="tibar" id="itibar" min="0" value="0">
-                <input type="number" name="tibarOuro" id="itibarOuro" min="0" value="0">
-            </fieldset>
-        </form>
-    </div>
 
     <script src="script_tormenta20_v1.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>
