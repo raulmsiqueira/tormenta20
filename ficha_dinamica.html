@@ -18,65 +18,78 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-6">
-                <label for="ipersonagem">Personagem</label>
-                <input type="text" name="personagem" id="ipersonagem">
-            </div>
-            <div class="col-6">
-                <label for="ijogador">Jogador(a)</label>
-                <input type="text" name="jogador" id="ijogador">
-            </div>
-        </div>
-        <br>
-        <div class="row">
             <div class="col">
                 <form name="formCabecalho" id="iformCabecalho" method="get"></form>
-                <label for="iraca">Raça</label>
-                <input type="text" name="raca" id="iraca">
-                <label for="iorigem">Origem</label>
-                <input type="text" name="origem" id="iorigem">
-                <label for="iclassePrsn">Classe</label>
-                <select name="classePrsn" id="iclassePrsn" oninput="funcClasse()">
-                    <option value="1" selected>Arcanista</option>
-                    <option value="2">Bárbaro</option>
-                    <option value="3">Bardo</option>
-                    <option value="4">Bucaneiro</option>
-                    <option value="5">Caçador</option>
-                    <option value="6">Cavaleiro</option>
-                    <option value="7">Clérigo</option>
-                    <option value="8">Druida</option>
-                    <option value="9">Guerreiro</option>
-                    <option value="10">Inventor</option>
-                    <option value="11">Ladino</option>
-                    <option value="12">Lutador</option>
-                    <option value="13">Nobre</option>
-                    <option value="14">Paladino</option>
-                </select>
-                <label for="inivel">Nível</label>
-                <select name="nivel" id="inivel" oninput="funcNivel()">
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                </select>
-                <label for="idivindade">Divindade</label>
-                <input type="text" name="divindade" id="idivindade">
+                <table class="table table-danger table-striped-columns text-center">
+                    <tr>
+                        <td colspan="2">
+                            <label for="ipersonagem">Personagem</label>
+                            <input type="text" name="personagem" id="ipersonagem">
+                        </td>
+                        <td colspan="3">
+                            <label for="ijogador">Jogador(a)</label>
+                            <input type="text" name="jogador" id="ijogador">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="iraca">Raça</label>
+                            <input type="text" name="raca" id="iraca">
+                        </td>
+                        <td>
+                            <label for="iorigem">Origem</label>
+                            <input type="text" name="origem" id="iorigem">
+                        </td>
+                        <td>
+                            <label for="iclassePrsn" class="fw-bold">Classe</label>
+                            <select name="classePrsn" id="iclassePrsn" oninput="funcClasse()">
+                                <option value="1" selected>Arcanista</option>
+                                <option value="2">Bárbaro</option>
+                                <option value="3">Bardo</option>
+                                <option value="4">Bucaneiro</option>
+                                <option value="5">Caçador</option>
+                                <option value="6">Cavaleiro</option>
+                                <option value="7">Clérigo</option>
+                                <option value="8">Druida</option>
+                                <option value="9">Guerreiro</option>
+                                <option value="10">Inventor</option>
+                                <option value="11">Ladino</option>
+                                <option value="12">Lutador</option>
+                                <option value="13">Nobre</option>
+                                <option value="14">Paladino</option>
+                            </select>
+                        </td>
+                        <td>
+                            <label for="inivel" class="fw-bold">Nível</label>
+                            <select name="nivel" id="inivel" oninput="funcNivel()">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <label for="idivindade">Divindade</label>
+                            <input type="text" name="divindade" id="idivindade">
+                        </td>
+                    </tr>
+                </table>
                 </form>
             </div>
         </div>
@@ -85,7 +98,7 @@
             <div class="col-6">
                 <!-- formulário de Atributos -->
                 <form method="get" name="formAtr" id="iformAtr">
-                    <table class="table table-striped-columns text-center">
+                    <table class="table table-danger table-striped-columns text-center">
                         <thead>
                             <tr class="fs-4">
                                 <th scope="col">
@@ -141,7 +154,7 @@
                 <br>
                 <!-- Pontos de Vida e Mana -->
                 <div>
-                    <table class="table table-striped-columns text-center">
+                    <table class="table table-danger table-striped-columns text-center">
                         <thead>
                             <tr>
                                 <th scope="col" class="fs-5"><label for="ipvMax">PV</label></th>
@@ -172,7 +185,7 @@
                 <!-- Defesa -->
                 <div>
                     <form name="formDef" id="iformDef" method="get" oninput="funcDef()">
-                        <table class="table table-striped-columns text-center">
+                        <table class="table table-danger table-striped-columns text-center">
                             <tr>
                                 <th><label for="idefesa">DEFESA</label></th>
                                 <td>=10+</td>
@@ -211,7 +224,7 @@
                 <!-- Armadura & Escudo -->
                 <div>
                     <form name="formArmdEsc" id="iformArmdEsc" method="get" oninput="funcDef()">
-                        <table class="table table-striped-columns">
+                        <table class="table table-danger table-striped-columns">
                             <tr class="text-center">
                                 <th colspan="2">ARMADURA & ESCUDO</th>
                                 <td>Defesa</td>
@@ -223,10 +236,12 @@
                                 <td><input type="text" name="armdNome" id="iarmdNome"></td>
                                 <td>
                                     <input type="number" name="armdDef" id="iarmdDef" value="0" min="0"
+                                        data-toggle="tooltip" title="Insira a defesa da Armadura"
                                         oninput="iarmdBonus.innerHTML=iarmdDef.value">
                                 </td>
                                 <td>
                                     <input type="number" name="penArmd" id="ipenArmd" value="0" max="0"
+                                        data-toggle="tooltip" title="Insira a penalidade da Armadura"
                                         oninput="funcSomaPeri()">
                                 </td>
                                 <td>
@@ -242,14 +257,20 @@
                                 <td><input type="text" name="escNome" id="iescNome"></td>
                                 <td>
                                     <input type="number" name="escDef" id="iescDef" value="0" min="0"
+                                        data-toggle="tooltip" title="Insira a defesa do Escudo"
                                         oninput="iescBonus.innerHTML=iescDef.value">
                                 </td>
                                 <td><input type="number" name="penEsc" id="ipenEsc" value="0" max="0"
+                                        data-toggle="tooltip" title="Insira a penalidade do Escudo"
                                         oninput="funcSomaPeri()"></td>
                                 <td></td>
                             </tr>
                         </table>
                     </form>
+                </div>
+                <br>
+                <div>
+                    <img src="thumb_reward_09_Tormenta20_escudo_do_mestre.jpg" class="img-fluid">
                 </div>
 
                 <!-- EXP, Tamanho e Deslocamento -->
@@ -258,7 +279,7 @@
             <!-- div das Perícias -->
             <div class="col-6 align-self-end">
                 <form name="formPeri" id="iformPeri" method="get" oninput="funcSomaPeri()">
-                    <table class="table table-sm table-striped-columns text-center">
+                    <table class="table table-sm table-danger table-striped-columns text-center">
                         <thead>
                             <tr>
                                 <th scope="col">PERÍCIAS</th>
@@ -1042,7 +1063,7 @@
                                 <td><input type="number" name="bonusVont" id="ibonusVont" value="0"></td>
                             </tr>
                             <!-- colocar *Somente treinado e #Penalidade de armadura -->
-                            <tr>
+                            <tr class="fw-lighter fst-italic">
                                 <td colspan="12"># Penalidade de armadura, * Somente treinado</td>
                             </tr>
                         </tbody>
