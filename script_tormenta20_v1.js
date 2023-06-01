@@ -190,3 +190,27 @@ function funcDef(){
     }
     idefesa.innerHTML = def;
 }
+function funcNvParaXp(){
+    nv = parseInt(inivel.value);
+    xp = 0;
+    // xp = parseInt(iexp.value); ?
+    axp = [];
+    for (i = 0; i < nv; i++) {
+        xp = xp + (i * 1000);
+        axp[i]= xp;       
+    }
+    alert(`Exp = ${xp} e Nv = ${axp.length}`);
+    // iexp.value = xp;
+}
+function funcXpParaNv(){
+    xp = window.prompt("Insira o xp:");
+    // xp = parseInt(iexp.value); ?
+    x = 0;
+    nv = 0;
+    do {
+        nv++;
+        x = x + nv * 1000;
+    } while (x <= xp);
+    alert(`Nível = ${nv}`);
+    // inivel.value = nv;
+}
