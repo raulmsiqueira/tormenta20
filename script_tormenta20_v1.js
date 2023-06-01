@@ -182,7 +182,8 @@ function funcBonusCar(){
 function funcDef(){    
     tp = itipoArmd.value;
     des = parseInt(iatDes.value);
-    if(tp == 2 && des > 0){
+    if(tp == 2){
+        // Armaduras pesadas não somam Destreza na Defesa ou não somam a Destreza positiva?
         def = 10 + parseInt(iarmdDef.value) + parseInt(iescDef.value) + parseInt(ioutrDef.value);
     }else{
         def = 10 + des + parseInt(iarmdDef.value) + parseInt(iescDef.value) + parseInt(ioutrDef.value);
