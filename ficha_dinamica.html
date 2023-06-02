@@ -14,21 +14,23 @@
 </head>
 
 <body>
-    <h1 class="text-center">TORMENTA20 - Ficha Dinâmica</h1>
     <br>
     <div class="container">
         <div class="row">
             <div class="col">
                 <form name="formCabecalho" id="iformCabecalho" method="get"></form>
-                <table class="table table-danger table-striped-columns text-center">
+                <table class="table table-danger table-striped-columns text-center align-middle">
                     <tr>
                         <td colspan="2">
                             <label for="ipersonagem">Personagem</label>
                             <input type="text" name="personagem" id="ipersonagem">
                         </td>
-                        <td colspan="3">
+                        <td colspan="2">
                             <label for="ijogador">Jogador(a)</label>
                             <input type="text" name="jogador" id="ijogador">
+                        </td>
+                        <td>
+                            <img src="tormenta20.jpg" class="img-fluid">
                         </td>
                     </tr>
                     <tr>
@@ -98,7 +100,7 @@
             <div class="col-6">
                 <!-- formulário de Atributos -->
                 <form method="get" name="formAtr" id="iformAtr">
-                    <table class="table table-danger table-striped-columns text-center">
+                    <table class="table table-danger table-striped-columns text-center align-middle">
                         <thead>
                             <tr class="fs-4">
                                 <th scope="col">
@@ -154,7 +156,7 @@
                 <br>
                 <!-- Pontos de Vida e Mana -->
                 <div>
-                    <table class="table table-danger table-striped-columns text-center">
+                    <table class="table table-danger table-striped-columns text-center align-middle">
                         <thead>
                             <tr>
                                 <th scope="col" class="fs-5"><label for="ipvMax">PV</label></th>
@@ -185,7 +187,7 @@
                 <!-- Defesa -->
                 <div>
                     <form name="formDef" id="iformDef" method="get" oninput="funcDef()">
-                        <table class="table table-danger table-striped-columns text-center">
+                        <table class="table table-danger table-striped-columns text-center align-middle">
                             <tr>
                                 <th><label for="idefesa">DEFESA</label></th>
                                 <td>=10+</td>
@@ -224,7 +226,7 @@
                 <!-- Armadura & Escudo -->
                 <div>
                     <form name="formArmdEsc" id="iformArmdEsc" method="get" oninput="funcDef()">
-                        <table class="table table-danger table-striped-columns">
+                        <table class="table table-danger table-striped-columns align-middle">
                             <tr class="text-center">
                                 <th colspan="2">ARMADURA & ESCUDO</th>
                                 <td>Defesa</td>
@@ -279,7 +281,7 @@
             <!-- div das Perícias -->
             <div class="col-6 align-self-end">
                 <form name="formPeri" id="iformPeri" method="get" oninput="funcSomaPeri()">
-                    <table class="table table-sm table-danger table-striped-columns text-center">
+                    <table class="table table-sm table-danger table-striped-columns text-center align-middle">
                         <thead>
                             <tr>
                                 <th scope="col">PERÍCIAS</th>
