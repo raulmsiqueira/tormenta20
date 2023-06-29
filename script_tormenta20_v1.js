@@ -64,11 +64,12 @@ function funcSomaPeri(){
     mn = parseInt(nv / 2);
     for(i=0;i<ap.length;i++){
         varId = ap[i].id;
+        icb = varId.match("icb");
         iperi = varId.match("iperi");
         imod = varId.match("imod");
         itr = varId.match("itr");
         ibonus = varId.match("ibonus");
-        icb = varId.match("icb");
+        
         if(icb !== null){
             if(ap[i].checked === false){
                 t = 0;
