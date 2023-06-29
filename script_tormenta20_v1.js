@@ -34,7 +34,7 @@ function funcClasse(){
 function funcNivel(){
     nv = parseInt(inivel.value);
     mnv = parseInt(nv / 2);
-    ap = document.forms.namedItem("iformPeri").elements;     
+    ap = document.forms.namedItem("iform").elements;     
     for(i=0;i<ap.length;i++){
         varId = ap[i].id;
         imNv = varId.match("imNv");
@@ -59,7 +59,7 @@ function funcTreino(cb){
     return varTr;
 }
 function funcSomaPeri(){
-    ap = document.forms.namedItem("iformPeri").elements; // ou document.forms[i].elements
+    ap = document.forms.namedItem("iform").elements; // ou document.forms[i].elements
     nv = parseInt(inivel.value);
     mn = parseInt(nv / 2);
     for(i=0;i<ap.length;i++){
@@ -108,7 +108,7 @@ function funcSomaPeri(){
     }        
 }
 function funcBonusFor(){
-    ap = document.forms.namedItem("iformPeri").elements;     
+    ap = document.forms.namedItem("iform").elements;     
     for(i=0;i<ap.length;i++){
         varId = ap[i].id;
         varNull = varId.match("imodFor");
@@ -120,7 +120,7 @@ function funcBonusFor(){
     funcSomaPeri();    
 }
 function funcBonusDes(){
-    ap = document.forms.namedItem("iformPeri").elements;     
+    ap = document.forms.namedItem("iform").elements;     
     for(i=0;i<ap.length;i++){
         varId = ap[i].id;
         varNull = varId.match("imodDes");
@@ -132,7 +132,7 @@ function funcBonusDes(){
     funcSomaPeri();
 }
 function funcBonusCon(){
-    ap = document.forms.namedItem("iformPeri").elements;     
+    ap = document.forms.namedItem("iform").elements;     
     for(i=0;i<ap.length;i++){
         varId = ap[i].id;
         varNull = varId.match("imodCon");
@@ -145,7 +145,7 @@ function funcBonusCon(){
     funcClasse();
 }
 function funcBonusInt(){
-    ap = document.forms.namedItem("iformPeri").elements;     
+    ap = document.forms.namedItem("iform").elements;     
     for(i=0;i<ap.length;i++){
         varId = ap[i].id;
         varNull = varId.match("imodInt");
@@ -157,7 +157,7 @@ function funcBonusInt(){
     funcSomaPeri();
 }
 function funcBonusSab(){
-    ap = document.forms.namedItem("iformPeri").elements;     
+    ap = document.forms.namedItem("iform").elements;     
     for(i=0;i<ap.length;i++){
         varId = ap[i].id;
         varNull = varId.match("imodSab");
@@ -169,7 +169,7 @@ function funcBonusSab(){
     funcSomaPeri();
 }
 function funcBonusCar(){
-    ap = document.forms.namedItem("iformPeri").elements;     
+    ap = document.forms.namedItem("iform").elements;     
     for(i=0;i<ap.length;i++){
         varId = ap[i].id;
         varNull = varId.match("imodCar");
